@@ -78,10 +78,11 @@
 /*home section style*/
 
 .home {
-    background-color: #141414;
+    //background-color: #141414;
     display: flex;
-/ / background: #141414 url("../image/Rasintha.png") no-repeat center;
     height: 100vh;
+    background: url("../image/Background.png");
+    background-size: cover;
     color: white;
     min-width: 500px;
     font-family: 'Ubuntu', sans-serif;
@@ -101,10 +102,10 @@
     margin-left: -3px;
 }
 
-.home .home-content .text-3 {
+/*.home .home-content .text-3 {
     font-size: 40px;
     margin: 5px 0;
-}
+}*/
 
 .home .home-content .text-3 span {
     color: #F06E4C;
@@ -112,6 +113,8 @@
 }
 
 .home .home-content a{
+    top: 60px;
+    position: relative;
     display: inline-block;
     background: #F06E4C;
     color: white;
@@ -128,8 +131,166 @@
     background: none;
 }
 
-/*about section style*/
+/*.wrapper{
+    left: -685px;
+    position: relative;
+    top: 350px;
+    display: flex;
+}
+.wrapper .static-txt{
+    position: relative;
+    top: 6px;
+    color: #fff;
+    font-size: 60px;
+    font-weight: 400;
+}
+.wrapper .dynamic-txts{
+    margin-left: 15px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+.dynamic-txts li{
+    list-style: none;
+    color: #F06E4C;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+    100%{
+        top: -360px;
+    }
+}
+.dynamic-txts li span{
+    position: relative;
+    margin: 5px 0;
+    line-height: 90px;
+}
+.dynamic-txts li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: black;
+    border-left: 2px solid #FC6D6D;
+    animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+    40%, 60%{
+        left: calc(100% + 30px);
+    }
+    100%{
+        left: 0;
+    }
+}*/
 
+.wrapper{
+    position: absolute;
+    top: 58%;
+    left: 17%;
+    transform: translate(-50%,-50%);
+}
+
+.wrapper h2{
+    padding: 0;
+    margin: 0;
+    color: white;
+    text-shadow: 0 2px 0 rgba(0,0,0,0.5);
+    font-size: 60px;
+}
+
+.wrapper span{
+    position: absolute;
+    left: 108%;
+    font-size: 60px;
+    font-weight: 500;
+    width: 500px;
+    top: -1%;
+}
+
+.wrapper span:before{
+    content: '';
+    color: #F06E4C;
+    animation: animate infinite 8s;
+}
+
+@keyframes animate {
+    0%{
+        content:'Software Engineer';
+    }
+    20%{
+        content:'Designer';
+    }
+    40%{
+        content:'Freelancer';
+    }
+    60%{
+        content:'Marketer';
+    }
+    80%{
+        content:'Developer';
+    }
+    100%{
+        content:'Traveller';
+    }
+}
+
+#media_links {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 3vw;
+    bottom: 55px;
+}
+
+#list {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 0vw;
+}
+
+#list > li {
+    list-style: none;
+    width: 60px;
+    font-size: 40px;
+    transition: .6s;
+    padding: 20px;
+}
+
+#list > li:hover {
+    transition: all .6s ease;
+    transform: translate(0, -20px);
+    color: white;
+}
+
+/*about section style*/
+section{
+    padding: 50px 0;
+}
+
+.about{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.about .title{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.about .about-content .left img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+}
 
 /*responsive media query start*/
 /*@media (max-width: 1104px) {
