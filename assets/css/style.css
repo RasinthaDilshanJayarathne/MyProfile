@@ -102,23 +102,18 @@
     margin-left: -3px;
 }
 
-/*.home .home-content .text-3 {
-    font-size: 40px;
-    margin: 5px 0;
-}*/
-
 .home .home-content .text-3 span {
     color: #F06E4C;
     font-weight: 500;
 }
 
-.home .home-content a{
-    top: 60px;
+#btnHire{
+    top: 70px;
     position: relative;
     display: inline-block;
     background: #F06E4C;
     color: white;
-    font-size: 25px;
+    font-size: 22px;
     padding: 12px 36px;
     margin-top: 20px;
     border-radius: 6px;
@@ -126,7 +121,7 @@
     transition: all 0.3s ease;
 }
 
-.home .home-content a:hover{
+#btnHire:hover{
     color: #F06E4C;
     background: none;
 }
@@ -210,12 +205,14 @@
     font-weight: 500;
     width: 500px;
     top: -1%;
+
 }
 
 .wrapper span:before{
     content: '';
+    font-family: 'Ubuntu', sans-serif;
     color: #F06E4C;
-    animation: animate infinite 8s;
+    animation: animate infinite 10s;
 }
 
 @keyframes animate {
@@ -244,7 +241,6 @@
     display: flex;
     bottom: 0;
     left: 3vw;
-    bottom: 55px;
 }
 
 #list {
