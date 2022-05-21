@@ -10,168 +10,61 @@
         <meta content="#F06E4C" name="theme-color">
 
         <link href="assets/css/style.css" rel="stylesheet">
-        <link href="assets/css/normalize.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+        <link href="assets/css/color-1.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
     </head>
     <body>
-    <nav class="navbar">
-        <div class="max-width">
-            <div class="logo"><a href="#">Rasin<span>tha.</span></a></div>
-            <ul class="menu">
-                <li><a href="#Home_Page">Home</a></li>
-                <li><a href="#About">Adout</a></li>
-                <li><a href="#Skill">Skill</a></li>
-                <li><a href="#Education">Education</a></li>
-                <li><a href="#Gallety">Gallety</a></li>
-                <li><a href="#Service">Service</a></li>
-                <li><a href="#Experience">Experience</a></li>
-                <li><a href="#Project">Project</a></li>
-                <li><a href="#ContactMe">ContactMe</a></li>
+
+    <!--Main Container Start-->
+    <div class="main-container">
+        <!--Aside Start-->
+        <div class="aside">
+            <div class="logo">
+                <a href="#"><span>R</span>asi</a>
+            </div>
+            <div class="nav-toggler">
+                <span></span>
+            </div>
+            <ul class="nav">
+                <li><a class="active" href="#"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="#"><i class="fa fa-user"></i>About</a></li>
+                <li><a href="#"><i class="fa fa-list"></i>Skill</a></li>
+                <li><a href="#"><i class="fa fa-briefcase"></i>Education</a></li>
+                <li><a href="#"><i class="fa fa-paint-brush"></i>Gallery</a></li>
+                <li><a href="#"><i class="fa fa-code"></i>Service</a></li>
+                <li><a href="#"><i class="fa fa-heart"></i>Project</a></li>
+                <li><a href="#"><i class="fa fa-comments"></i>ContactMe</a></li>
             </ul>
-            <div class="menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
         </div>
-    </nav>
-
-    <!--home section start-->
-    <section class="home" id="home">
-        <div class="max-width">
-            <div class="home-content">
-                <div class="wavy">
-                    <span style="--i:1; color: #F06E4C">H</span>
-                    <span style="--i:2;">e</span>
-                    <span style="--i:3;">l</span>
-                    <span style="--i:4;">l</span>
-                    <span style="--i:5;"> </span>
-                    <span style="--i:6;"> </span>
-                    <span style="--i:7; color: #F06E4C">m</span>
-                    <span style="--i:8;">y</span>
-                    <span style="--i:9;"> </span>
-                    <span style="--i:10;"> </span>
-                    <span style="--i:11; color: #F06E4C">n</span>
-                    <span style="--i:12;">a</span>
-                    <span style="--i:13;">m</span>
-                    <span style="--i:14;">e</span>
-                    <span style="--i:15;"> </span>
-                    <span style="--i:16;"> </span>
-                    <span style="--i:17; color: #F06E4C">i</span>
-                    <span style="--i:18;">s</span>
-                    <span style="--i:19;">,</span>
+        <!--Aside End-->
+        <!--Main Content Start-->
+        <div class="main-content">
+            <section class="home section">
+                <div class="container">
+                    <div class="row">
+                        <div class="home-info padd-15">
+                            <h3 class="hello">Hello, my name is <span class="name">Rasintha Dilshan</span></h3>
+                            <h3 class="my-profession">I'm a <span class="typing">Software Engineer</span></h3>
+                            <p>I am software engineering student in IJSE (Institute of JavaSoftware Engineering)
+                                and currently completing first semester.
+                                An enthusiastic student with highly motivated and studying Software Engineering
+                                at IJSE.Eager to learn new technologies and always willing to innovate
+                                the new things which can improve the existing technology. An easy going
+                                person with positive attitudes and good team working ability.</p>
+                            <a href="#contact" class="btn hire-me">Hire Me</a>
+                        </div>
+                        <div class="home-img padd-15">
+                            <img src="assets/image/Rasintha1.jpeg" alt="">
+                        </div>
+                    </div>
                 </div>
-                <br>
-                <div class="wavy" id="wavyTwo">
-                    <span style="--i:1; color: #F06E4C">R</span>
-                    <span style="--i:2;">a</span>
-                    <span style="--i:3;">s</span>
-                    <span style="--i:4; color: #F06E4C">i</span>
-                    <span style="--i:5;">n</span>
-                    <span style="--i:6;">t</span>
-                    <span style="--i:7; color: #F06E4C">h</span>
-                    <span style="--i:8;">a</span>
-                    <span style="--i:9;"> </span>
-                    <span style="--i:10;"> </span>
-                    <span style="--i:11;">D</span>
-                    <span style="--i:12; color: #F06E4C">i</span>
-                    <span style="--i:13;">l</span>
-                    <span style="--i:14;">s</span>
-                    <span style="--i:15;color: #F06E4C">h</span>
-                    <span style="--i:16;">a</span>
-                    <span style="--i:17;">n</span>
-                    <span style="--i:18;"> </span>
-                </div>
-                <br>
-                <div class="wavy" id="wavyThree">
-                    <span style="--i:1; color: #F06E4C">S</span>
-                    <span style="--i:2;">o</span>
-                    <span style="--i:3;">f</span>
-                    <span style="--i:4; color: #F06E4C">f</span>
-                    <span style="--i:5;">t</span>
-                    <span style="--i:6;">w</span>
-                    <span style="--i:7; color: #F06E4C">a</span>
-                    <span style="--i:8;">r</span>
-                    <span style="--i:9;">e</span>
-                    <span style="--i:10;"> </span>
-                    <span style="--i:11;"> </span>
-                    <span style="--i:12;">E</span>
-                    <span style="--i:13; color: #F06E4C">n</span>
-                    <span style="--i:14;">g</span>
-                    <span style="--i:15;">i</span>
-                    <span style="--i:16;color: #F06E4C">n</span>
-                    <span style="--i:17;">e</span>
-                    <span style="--i:18;">e</span>
-                    <span style="--i:19;">r</span>
-                </div>
-                <a href="#" id="btnHire">Hire me</a>
-
-                <nav id="media_links">
-                    <ul id="list">
-                        <li id="facebook">
-                            <a href="https://www.facebook.com/profile.php?id=100021760126566" style="padding: 10px">
-                                <i class="fab fa-facebook-square" style="color: #F06E4C"></i>
-                            </a>
-                        </li>
-                        <li id="instagram">
-                            <a href="https://www.instagram.com/____r_a_s_i_____/ " style="padding: 10px">
-                                <i class="fab fa-instagram-square" style="color: #F06E4C"></i>
-                            </a>
-                        </li>
-                        <li id="twitter">
-                            <a href="https://twitter.com/RasinthaDilshan" style="padding: 10px">
-                                <i class="fab fa-twitter-square" style="color: #F06E4C"></i>
-                            </a>
-                        </li>
-                        <li id="linkedin">
-                            <a href="https://www.linkedin.com/in/rasintha-dilshan-21762a203" style="padding: 10px">
-                                <i class="fab fa-linkedin" style="color: #F06E4C"></i>
-                            </a>
-                        </li>
-                        <li id="github">
-                            <a href="https://github.com/RasinthaDilshanJayarathne" style="padding: 10px">
-                                <i class="fab fa-github-square" style="color: #F06E4C"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            </section>
         </div>
-
-    </section>
-
-    <!--about section start-->
-    <section class="about" id="about">
-        <div class="max-width">
-            <h2 class="title">About Me</h2>
-            <div class="about-content">
-                <div class="column left">
-                    <img alt="" id="imgTwo" src="assets/image/Rasintha1.jpeg">
-                </div>
-                <div class="column right">
-                    <div class="text">I'm Rasintha and I'm a <span>Software Engineer</span></div>
-                    <p id="description_4">
-                        I am software engineering student in IJSE (Institute of JavaSoftware Engineering)
-                        and currently completing first semester.
-                        An enthusiastic student with highly motivated and studying Software Engineering
-                        at IJSE.Eager to learn new technologies and always willing to innovate
-                        the new things which can improve the existing technology. An easy going
-                        person with positive attitudes and good team working ability.
-                    </p>
-                    <br>
-                    <p id="description_5">
-                        Name : Rasintha Dilshan Jayarathne <br>
-                        Contact : +94 712954885 / +94 762416064 <br>
-                        Age : 20
-                    </p>
-                    <a href="#">Download CV</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
+        <!--Main Content End-->
+    </div>
+    <!--Main Container End-->
 
     <script src="assets/script/script.js"></script>
-
     </body>
 
 </htm>
