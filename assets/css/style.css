@@ -14,6 +14,7 @@
 .navbar {
     position: fixed;
     width: 100%;
+    z-index: 999;
     padding: 10px 0;
     font-family: 'Ubuntu', sans-serif;
     transition: all 0.3s ease;
@@ -41,7 +42,7 @@
     transition: all 0.3s ease;
 }
 
-.navbar.sticky .logo a span{
+.navbar.sticky .logo a span {
     color: white;
 }
 
@@ -62,13 +63,13 @@
     color: #F06E4C;
 }
 
-.navbar.sticky .menu li a:hover{
+.navbar.sticky .menu li a:hover {
     color: white;
 }
 
 /*menu btn style*/
 
-.menu-btn{
+.menu-btn {
     color: white;
     font-size: 23px;
     cursor: pointer;
@@ -78,7 +79,7 @@
 /*home section style*/
 
 .home {
-    //background-color: #141414;
+/ / background-color: #141414;
     display: flex;
     height: 100vh;
     background: url("../image/Background.png");
@@ -88,7 +89,7 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
-#btnHire{
+#btnHire {
     display: inline-block;
     background: #F06E4C;
     color: white;
@@ -96,13 +97,12 @@
     font-weight: bold;
     padding: 12px 36px;
     font-family: 'Ubuntu', sans-serif;
-    margin-top: 20px;
     border-radius: 6px;
     border: 2px solid #F06E4C;
     transition: all 0.3s ease;
 }
 
-.home .home-content a:hover{
+.home .home-content a:hover {
     color: white;
     background: none;
 }
@@ -111,14 +111,13 @@
     margin: auto 0 auto 40px;
 }
 
-.wavy{
+.wavy {
     position: relative;
     /*-webkit-box-reflect: below -12px linear-gradient ,(transparent, rgba(0,0,0,0.2));*/
 }
 
-.wavy span{
+.wavy span {
     position: relative;
-    z-index: 1;
     display: inline-block;
     color: white;
     font-family: 'Ubuntu', sans-serif;
@@ -130,25 +129,24 @@
     animation-delay: calc(0.1s * var(--i));
 }
 
-#wavyTwo{
+#wavyTwo {
     letter-spacing: 10px;
 }
 
 @keyframes animate {
-    0%{
+    0% {
         transform: translateY(0px);
     }
-    20%{
+    20% {
         transform: translateY(-20px);
     }
-    40%,100%{
+    40%, 100% {
         transform: translateY(0px);
     }
 }
 
-#btnHire{
+#btnHire {
     top: 70px;
-    position: relative;
     display: inline-block;
     background: #F06E4C;
     color: white;
@@ -160,7 +158,7 @@
     transition: all 0.3s ease;
 }
 
-#btnHire:hover{
+#btnHire:hover {
     color: #F06E4C;
     background: none;
 }
@@ -193,74 +191,73 @@
     color: white;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*about section style*/
-/*section{
-    padding: 50px 0;
+
+section {
+    padding: 100px 0;
+    background: #141414;
 }
 
-.about{
-    font-family: 'Ubuntu', sans-serif;
+.about {
+    font-family: 'Poppins', sans-serif;
 }
 
-.about .title{
+.about .title {
+    bottom:10vh;
+    position: relative;
     text-align: center;
+    font-family: 'ubuntu', sans-serif;
     font-size: 40px;
-    font-weight: 500;
-    margin-bottom: 60px;
-    padding-bottom: 20px;
-    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: white;
 }
 
-.about .about-content .left img{
+.about .title::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #F06E4C;
+    transform: translateX(-50%);
+}
+
+.about .title::after {
+    content: "who i am";
+    position: absolute;
+    bottom: -23px;
+    left: 50%;
+    font-size: 20px;
+    color: #F06E4C;
+    padding: 5px;
+    background: #141414;
+    transform: translateX(-50%);
+}
+
+.about .about-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about .about-content .left{
+    width: 45%;
+}
+
+.about .about-content .left img {
     height: 400px;
-    width: 400px;
+    width: 350px;
     object-fit: cover;
+    border-radius: 6px;
 }
 
-.wavy{
-    position: relative;
-    !*
-    -webkit-box-reflect: below -12px linear-gradient ,(transparent, rgba(0,0,0,0.2));
-    *!
+.about .about-content .right{
+    width: 55%;
 }
 
-.wavy span{
-    position: relative;
-    display: inline-block;
-    color: black;
-    font-size: 2em;
-    text-transform: uppercase;
-    animation: animate 1s ease-in-out infinite;
-    animation-delay: calc(0.1s * var(--i));
-}
-
-@keyframes animate {
-    0%{
-        transform: translateY(0px);
-    }
-    20%{
-        transform: translateY(-20px);
-    }
-    40%,100%{
-        transform: translateY(0px);
-    }
-}*/
 
 /*responsive media query start*/
 /*@media (max-width: 1104px) {
