@@ -88,23 +88,62 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
+#btnHire{
+    display: inline-block;
+    background: #F06E4C;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 36px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid #F06E4C;
+    transition: all 0.3s ease;
+}
+
+.home .home-content a:hover{
+    color: white;
+    background: none;
+}
+
 .home .max-width {
     margin: auto 0 auto 40px;
 }
 
-.home .home-content .text-1 {
-    font-size: 27px;
+.wavy{
+    position: relative;
+    /*-webkit-box-reflect: below -12px linear-gradient ,(transparent, rgba(0,0,0,0.2));*/
 }
 
-.home .home-content .text-2 {
-    font-size: 75px;
-    font-weight: 600;
-    margin-left: -3px;
+.wavy span{
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    animation: animate 1s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
 }
 
-.home .home-content .text-3 span {
-    color: #F06E4C;
-    font-weight: 500;
+#wavyTwo{
+    letter-spacing: 10px;
+}
+
+@keyframes animate {
+    0%{
+        transform: translateY(0px);
+    }
+    20%{
+        transform: translateY(-20px);
+    }
+    40%,100%{
+        transform: translateY(0px);
+    }
 }
 
 #btnHire{
@@ -124,116 +163,6 @@
 #btnHire:hover{
     color: #F06E4C;
     background: none;
-}
-
-/*.wrapper{
-    left: -685px;
-    position: relative;
-    top: 350px;
-    display: flex;
-}
-.wrapper .static-txt{
-    position: relative;
-    top: 6px;
-    color: #fff;
-    font-size: 60px;
-    font-weight: 400;
-}
-.wrapper .dynamic-txts{
-    margin-left: 15px;
-    height: 90px;
-    line-height: 90px;
-    overflow: hidden;
-}
-.dynamic-txts li{
-    list-style: none;
-    color: #F06E4C;
-    font-size: 60px;
-    font-weight: 500;
-    position: relative;
-    top: 0;
-    animation: slide 12s steps(4) infinite;
-}
-@keyframes slide {
-    100%{
-        top: -360px;
-    }
-}
-.dynamic-txts li span{
-    position: relative;
-    margin: 5px 0;
-    line-height: 90px;
-}
-.dynamic-txts li span::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: black;
-    border-left: 2px solid #FC6D6D;
-    animation: typing 3s steps(10) infinite;
-}
-@keyframes typing {
-    40%, 60%{
-        left: calc(100% + 30px);
-    }
-    100%{
-        left: 0;
-    }
-}*/
-
-.wrapper{
-    position: absolute;
-    top: 58%;
-    left: 17%;
-    transform: translate(-50%,-50%);
-}
-
-.wrapper h2{
-    padding: 0;
-    margin: 0;
-    color: white;
-    text-shadow: 0 2px 0 rgba(0,0,0,0.5);
-    font-size: 60px;
-}
-
-.wrapper span{
-    position: absolute;
-    left: 108%;
-    font-size: 60px;
-    font-weight: 500;
-    width: 500px;
-    top: -1%;
-
-}
-
-.wrapper span:before{
-    content: '';
-    font-family: 'Ubuntu', sans-serif;
-    color: #F06E4C;
-    animation: animate infinite 10s;
-}
-
-@keyframes animate {
-    0%{
-        content:'Software Engineer';
-    }
-    20%{
-        content:'Designer';
-    }
-    40%{
-        content:'Freelancer';
-    }
-    60%{
-        content:'Marketer';
-    }
-    80%{
-        content:'Developer';
-    }
-    100%{
-        content:'Traveller';
-    }
 }
 
 #media_links {
@@ -264,8 +193,24 @@
     color: white;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*about section style*/
-section{
+/*section{
     padding: 50px 0;
 }
 
@@ -287,6 +232,35 @@ section{
     width: 400px;
     object-fit: cover;
 }
+
+.wavy{
+    position: relative;
+    !*
+    -webkit-box-reflect: below -12px linear-gradient ,(transparent, rgba(0,0,0,0.2));
+    *!
+}
+
+.wavy span{
+    position: relative;
+    display: inline-block;
+    color: black;
+    font-size: 2em;
+    text-transform: uppercase;
+    animation: animate 1s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes animate {
+    0%{
+        transform: translateY(0px);
+    }
+    20%{
+        transform: translateY(-20px);
+    }
+    40%,100%{
+        transform: translateY(0px);
+    }
+}*/
 
 /*responsive media query start*/
 /*@media (max-width: 1104px) {
