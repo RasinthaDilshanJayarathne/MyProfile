@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-:root{
-    --bg-black-900:#f2f2fc;
-    --bg-black-100:#fdf9ff;
-    --bg-black-50:#e8dfec;
-    --text-black-900:#302e4d;
-    --text-black-700:#504e70;
+:root {
+    --bg-black-900: #f2f2fc;
+    --bg-black-100: #fdf9ff;
+    --bg-black-50: #e8dfec;
+    --text-black-900: #302e4d;
+    --text-black-700: #504e70;
 }
 
-body{
+body {
     line-height: 1.5;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     outline: none;
@@ -22,15 +22,15 @@ body{
     box-sizing: border-box;
 }
 
-::before,::after{
+::before, ::after {
     box-sizing: border-box;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-.section{
+.section {
     background: var(--bg-black-900);
     min-height: 100vh;
     display: block;
@@ -38,44 +38,44 @@ ul{
     opacity: 1;
 }
 
-.hidden{
+.hidden {
     display: none !important;
 }
 
-.main-content{
+.main-content {
     padding-left: 270px;
 }
 
-.padd-15{
+.padd-15 {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-.container{
+.container {
     max-width: 1100px;
     width: 100%;
     margin: auto;
 }
 
-.section .container{
+.section .container {
     padding-top: 60px;
     padding-bottom: 70px;
 }
 
-.section-title{
+.section-title {
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 60px;
 }
 
-.section-title h2{
+.section-title h2 {
     font-size: 40px;
     color: var(--text-black-900);
     font-weight: 700;
     position: relative;
 }
 
-.section-title h2::before{
+.section-title h2::before {
     content: '';
     height: 4px;
     width: 50px;
@@ -85,7 +85,7 @@ ul{
     left: 0;
 }
 
-.section-title h2::after{
+.section-title h2::after {
     content: '';
     height: 4px;
     width: 25px;
@@ -96,7 +96,7 @@ ul{
     margin-top: 8px;
 }
 
-.row{
+.row {
     display: flex;
     flex-wrap: wrap;
     margin-left: 80px;
@@ -104,7 +104,7 @@ ul{
     position: relative;
 }
 
-.btn{
+.btn {
     font-size: 16px;
     font-weight: 500;
     padding: 12px 35px;
@@ -117,12 +117,12 @@ ul{
     transition: all 0.3s ease;
 }
 
-.btn:hover{
+.btn:hover {
     transform: scale(1.05);
 }
 
 /* aside section */
-.aside{
+.aside {
     width: 270px;
     background: var(--bg-black-100);
     position: fixed;
@@ -137,14 +137,14 @@ ul{
     z-index: 0;
 }
 
-.aside .logo{
+.aside .logo {
     position: absolute;
     top: 50px;
     font-size: 30px;
     text-transform: capitalize;
 }
 
-.aside .logo a{
+.aside .logo a {
     color: var(--text-black-900);
     font-weight: 700;
     padding: 15px 20px;
@@ -153,13 +153,13 @@ ul{
     position: relative;
 }
 
-.aside .logo a span{
+.aside .logo a span {
     font-family: 'Clicker Script', cursive;
     font-size: 40px;
 }
 
-.aside .logo a:before{
-    content:'';
+.aside .logo a:before {
+    content: '';
     position: absolute;
     width: 20px;
     height: 20px;
@@ -169,8 +169,8 @@ ul{
     left: 0;
 }
 
-.aside .logo a:after{
-    content:'';
+.aside .logo a:after {
+    content: '';
     position: absolute;
     width: 20px;
     height: 20px;
@@ -180,7 +180,7 @@ ul{
     right: 0;
 }
 
-.aside .nav-toggler{
+.aside .nav-toggler {
     height: 40px;
     width: 45px;
     border: 1px solid var(--bg-black-50);
@@ -195,7 +195,7 @@ ul{
     justify-content: center;
 }
 
-.aside .nav-toggler span{
+.aside .nav-toggler span {
     height: 2px;
     width: 18px;
     background: var(--skin-color);
@@ -203,7 +203,7 @@ ul{
     position: relative;
 }
 
-.aside .nav-toggler span::before{
+.aside .nav-toggler span::before {
     content: '';
     height: 2px;
     width: 18px;
@@ -213,7 +213,7 @@ ul{
     left: 0;
 }
 
-.aside .nav-toggler span::after{
+.aside .nav-toggler span::after {
     content: '';
     height: 2px;
     width: 18px;
@@ -223,16 +223,16 @@ ul{
     left: 0;
 }
 
-.aside .nav{
+.aside .nav {
     margin-top: 50px;
 }
 
-.aside .nav li{
+.aside .nav li {
     margin-bottom: 20px;
     display: block;
 }
 
-.aside .nav li a{
+.aside .nav li a {
     font-size: 16px;
     font-weight: 600;
     display: block;
@@ -241,61 +241,61 @@ ul{
     padding: 5px 15px;
 }
 
-.aside .nav li a.active{
+.aside .nav li a.active {
     color: var(--skin-color);
 }
 
-.aside .nav li a i{
+.aside .nav li a i {
     margin-right: 15px;
 }
 
 /*home*/
-.home{
+.home {
     min-height: 100vh;
     display: flex;
     color: var(--text-black-900);
 }
 
-.home .home-info{
+.home .home-info {
     flex: 0 0 60%;
     max-width: 60%;
 }
 
-h3.hello{
+h3.hello {
     font-size: 28px;
     margin: 15px 0;
 }
 
-h3.hello span{
+h3.hello span {
     font-family: 'Clicker Script', cursive;
     font-size: 30px;
     font-weight: 700;
     color: var(--skin-color);
 }
 
-h3.my-profession{
+h3.my-profession {
     font-size: 30px;
     margin: 15px 0;
 }
 
-.typing{
+.typing {
     color: var(--skin-color);
 }
 
-.home-info p{
+.home-info p {
     margin-bottom: 70px;
     font-size: 20px;
     color: var(--text-black-700);
 }
 
-.home .home-img{
+.home .home-img {
     flex: 0 0 40%;
     max-width: 40%;
     text-align: center;
     position: relative;
 }
 
-.home-img::after{
+.home-img::after {
     content: '';
     position: absolute;
     height: 80px;
@@ -306,7 +306,7 @@ h3.my-profession{
     bottom: -40px;
 }
 
-.home-img::before{
+.home-img::before {
     content: '';
     position: absolute;
     height: 80px;
@@ -317,7 +317,7 @@ h3.my-profession{
     top: -40px;
 }
 
-.home .home-img img{
+.home .home-img img {
     margin: auto;
     border-radius: 5px;
     height: 400px;
@@ -325,41 +325,115 @@ h3.my-profession{
 
 /*About*/
 
-.about .about-content{
+.about .about-content {
     flex: 0 0 100%;
     max-width: 100%;
 }
 
-.about .about-content .about-text{
+.about .about-content .about-text {
     flex: 0 0 100%;
     max-width: 100%;
 }
 
-.about .about-content .about-text h3{
+.about .about-content .about-text h3 {
     font-size: 24px;
     margin-bottom: 15px;
     font-weight: 700;
     color: var(--text-black-900);
 }
 
-.about .about-content .about-text h3 span{
+.about .about-content .about-text h3 span {
     color: var(--skin-color);
 }
 
-.about .about-content .about-text p{
+.about .about-content .about-text p {
     font-size: 16px;
     line-height: 25px;
     color: var(--text-black-700);
 }
 
-.about .about-text .personal-info{
-    flex: 0 0 60%;
-    max-width: 60%;
-    background-color: red;
+.about .about-content .personal-info {
+    flex: 0 0 65%;
+    max-width: 65%;
+    margin-top: 40px;
+    margin-left: -78px;
 }
 
-.about .about-text .skills{
-    flex: 0 0 40%;
-    max-width: 40%;
-    background-color: green;
+.about .about-content .personal-info .info-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.about .about-content .personal-info .info-item p {
+    font-weight: 600;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--text-black-900);
+    border-bottom: 1px solid var(--bg-black-50);
+}
+
+.about .about-content .personal-info .info-item p span {
+    font-weight: 400;
+    color: var(--text-black-700);
+    margin-left: 4px;
+    display: inline-block;
+}
+
+.about .about-content .personal-info .buttons {
+    margin-top: 30px;
+}
+
+.about .about-content .personal-info .buttons .btn {
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.about .about-content .skills {
+    flex: 0 0 34%;
+    max-width: 34%;
+    margin-top: 40px;
+    margin-right: 50px;
+}
+
+.about .about-content .skills .skill-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.about .about-content .skills .skill-item h5{
+    line-height: 40px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text-black-900);
+    text-transform: capitalize;
+}
+
+.about .about-content .skills .skill-item .progress{
+    background-color: var(--bg-black-50);
+    height: 7px;
+    border-radius: 4px;
+    width: 100%;
+    position: relative;
+}
+
+.about .about-content .skills .skill-item{
+    margin-bottom: 25px;
+}
+
+.about .about-content .skills .skill-item .progress .progress-in{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 4px;
+    background-color: var(--skin-color);
+}
+
+.about .about-content .skills .skill-item .skill-percent{
+    position: absolute;
+    right: 0;
+    color: var(--text-black-900);
+    font-weight: 400;
+    top: -40px;
+    line-height: 40px;
 }
