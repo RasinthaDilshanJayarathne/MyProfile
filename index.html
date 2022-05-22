@@ -12,6 +12,13 @@
         <link href="assets/css/style.css" rel="stylesheet">
         <link href="assets/css/color-1.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+
+        <link href="assets/css/color-1.css" rel="stylesheet" class="alternate-style" title="color-1" disabled>
+        <link href="assets/css/color-2.css" rel="stylesheet" class="alternate-style" title="color-2" disabled>
+        <link href="assets/css/color-3.css" rel="stylesheet" class="alternate-style" title="color-3" disabled>
+        <link href="assets/css/color-4.css" rel="stylesheet" class="alternate-style" title="color-4" disabled>
+        <link href="assets/css/color-5.css" rel="stylesheet" class="alternate-style" title="color-5" disabled>
+        <link rel="stylesheet" href="assets/css/style-switcher.css">
     </head>
     <body>
 
@@ -375,42 +382,42 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="assets/image/projects/5.png" alt="">
+                                    <img alt="" src="assets/image/projects/5.png">
                                 </div>
                             </div>
                         </div>
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="assets/image/projects/4.png" alt="">
+                                    <img alt="" src="assets/image/projects/4.png">
                                 </div>
                             </div>
                         </div>
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="assets/image/projects/6.png" alt="">
+                                    <img alt="" src="assets/image/projects/6.png">
                                 </div>
                             </div>
                         </div>
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="assets/image/projects/7.png" alt="">
+                                    <img alt="" src="assets/image/projects/7.png">
                                 </div>
                             </div>
                         </div>
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="assets/image/projects/3.png" alt="">
+                                    <img alt="" src="assets/image/projects/3.png">
                                 </div>
                             </div>
                         </div>
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner shadow-dark">
                                 <div class="portfolio-img">
-                                    <img src="assets/image/projects/1.png" alt="">
+                                    <img alt="" src="assets/image/projects/1.png">
                                 </div>
                             </div>
                         </div>
@@ -461,32 +468,32 @@
                             <div class="row">
                                 <div class="form-item col-6 padd-15">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Name">
+                                        <input class="form-control" placeholder="Name" type="text">
                                     </div>
                                 </div>
                                 <div class="form-item col-6 padd-15">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email">
+                                        <input class="form-control" placeholder="Email" type="email">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-item col-12 padd-15">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Subject">
+                                        <input class="form-control" placeholder="Subject" type="text">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-item col-12 padd-15">
                                     <div class="form-group">
-                                        <textarea name="" id="" class="form-control" placeholder="Message"></textarea>
+                                        <textarea class="form-control" id="" name="" placeholder="Message"></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-item col-12 padd-15">
-                                    <button type="submit" class="btn">Send Message</button>
+                                    <button class="btn" type="submit">Send Message</button>
                                 </div>
                             </div>
                         </div>
@@ -500,7 +507,28 @@
 
     <!--Main Container End-->
 
+    <!--Style Switcher Start-->
+    <div class="style-switcher">
+        <div class="style-switcher-toggler s-icon">
+            <i class="fas fa-cog fa-spin"></i>
+        </div>
+        <div class="day-night s-icon">
+            <i class="fas fa-moon"></i>
+        </div>
+        <h4>Theme Colors</h4>
+        <div class="colors">
+           <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+           <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+           <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+           <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+           <span class="color-5" onclick="setActiveStyle('color-')"></span>
+        </div>
+    </div>
+    <!--Style Switcher End-->
+
     <script src="assets/script/script.js"></script>
+
+    <script src=""></script>
     </body>
 
 </htm>
