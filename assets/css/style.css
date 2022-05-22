@@ -674,26 +674,26 @@ h3.my-profession {
     font-weight: 400;
 }
 
-.contact .contact-form{
+.contact .contact-form {
     flex: 0 0 100%;
     max-width: 100%;
 }
 
-.contact .contact-form .col-6{
+.contact .contact-form .col-6 {
     flex: 0 0 50%;
     max-width: 50%;
 }
 
-.contact .contact-form .col-12{
+.contact .contact-form .col-12 {
     flex: 0 0 100%;
     max-width: 100%;
 }
 
-.contact .contact-form .form-item{
+.contact .contact-form .form-item {
     margin-bottom: 30px;
 }
 
-.contact .contact-form .form-item .form-control{
+.contact .contact-form .form-item .form-control {
     width: 100%;
     height: 50%;
     border-radius: 25px;
@@ -705,15 +705,65 @@ h3.my-profession {
     transition: all 0.3s ease;
 }
 
-.contact .contact-form .form-item .form-control:focus{
+.contact .contact-form .form-item .form-control:focus {
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 
-.contact .contact-form .form-item textarea.form-control{
+.contact .contact-form .form-item textarea.form-control {
     height: 140px;
 }
 
-.contact .contact-form .btn{
+.contact .contact-form .btn {
     height: 50px;
     padding: 0 50px;
+}
+
+
+@media (max-width: 1199px) {
+    .aside {
+        left: -270px;
+    }
+
+    .main-content {
+        padding-left: 0;
+    }
+
+    .about .main-content .personal-info .info-item p span {
+        display: block;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .service .service-item,
+    .portfolio .portfolio-item,
+    .contact .contact-info-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .home .home-info {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .home .home-img {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .contact .contact-form .col-6,
+    .contact .contact-info-item,
+    .portfolio .portfolio-item,
+    .service .service-item,
+    .about .about-content .experience,
+    .about .about-content .education,
+    .about .about-content .skills,
+    .about .about-content .personal-info{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
