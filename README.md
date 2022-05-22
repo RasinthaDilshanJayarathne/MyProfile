@@ -2,7 +2,7 @@
 
 This is my Personal Web
 
-[![myProfile](https://user-images.githubusercontent.com/87766409/169680682-59bb3538-683c-419b-96b0-94cd7db68e4c.jpg)](https://rasinthadilshanjayarathne.github.io/My-Presonal-Web/)
+[![myProfile](https://user-images.githubusercontent.com/87766409/169680682-59bb3538-683c-419b-96b0-94cd7db68e4c.jpg)]( https://rasinthadilshanjayarathne.github.io/MyProfile/)
 
 
 ## Contact
@@ -15,7 +15,7 @@ My Personal Web Wire Frame :https://wireframe.cc/ucLMEG
 
 My Personal Web Mockup : https://www.figma.com/file/IQxOTQyxKbecZWRDEX7bmm/My-First-Web?node-id=0%3A1
 
-My Github Page Link : https://rasinthadilshanjayarathne.github.io/My-Presonal-Web/
+My Github Page Link :  https://rasinthadilshanjayarathne.github.io/MyProfile/
 
 My Personal Profile : https://rasinthadilshan.000webhostapp.com/
 
