@@ -13,12 +13,12 @@
         <link href="assets/css/color-1.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
 
-        <link href="assets/css/color-1.css" rel="stylesheet" class="alternate-style" title="color-1" disabled>
-        <link href="assets/css/color-2.css" rel="stylesheet" class="alternate-style" title="color-2" disabled>
-        <link href="assets/css/color-3.css" rel="stylesheet" class="alternate-style" title="color-3" disabled>
-        <link href="assets/css/color-4.css" rel="stylesheet" class="alternate-style" title="color-4" disabled>
-        <link href="assets/css/color-5.css" rel="stylesheet" class="alternate-style" title="color-5" disabled>
-        <link rel="stylesheet" href="assets/css/style-switcher.css">
+        <link class="alternate-style" disabled href="assets/css/color-1.css" rel="stylesheet" title="color-1">
+        <link class="alternate-style" disabled href="assets/css/color-2.css" rel="stylesheet" title="color-2">
+        <link class="alternate-style" disabled href="assets/css/color-3.css" rel="stylesheet" title="color-3">
+        <link class="alternate-style" disabled href="assets/css/color-4.css" rel="stylesheet" title="color-4">
+        <link class="alternate-style" disabled href="assets/css/color-5.css" rel="stylesheet" title="color-5">
+        <link href="assets/css/style-switcher.css" rel="stylesheet">
     </head>
     <body>
 
@@ -34,17 +34,17 @@
             </div>
             <ul class="nav">
                 <li><a class="active" href="#home"><i class="fa fa-home"></i>Home</a></li>
-                <li><a class="active" href="#about"><i class="fa fa-user"></i>About</a></li>
-                <li><a class="active" href="#gallery"><i class="fa fa-paint-brush"></i>Gallery</a></li>
-                <li><a class="active" href="#service"><i class="fa fa-code"></i>Service</a></li>
-                <li><a class="active" href="#project"><i class="fa fa-heart"></i>Project</a></li>
-                <li><a class="active" href="#contactMe"><i class="fa fa-comments"></i>ContactMe</a></li>
+                <li><a href="#about"><i class="fa fa-user"></i>About</a></li>
+                <li><a href="#gallery"><i class="fa fa-paint-brush"></i>Gallery</a></li>
+                <li><a href="#service"><i class="fa fa-code"></i>Service</a></li>
+                <li><a href="#project"><i class="fa fa-heart"></i>Project</a></li>
+                <li><a href="#contactMe"><i class="fa fa-comments"></i>ContactMe</a></li>
             </ul>
         </div>
         <!--Aside End-->
         <!--Main Content Start-->
-        <div class="main-content" id="home">
-            <section class="home section">
+        <div class="main-content">
+            <section class="home active section" id="home">
                 <div class="container">
                     <div class="row">
                         <div class="home-info padd-15">
@@ -63,10 +63,41 @@
                         </div>
                     </div>
                 </div>
+                <div>
+                    <nav id="media_links">
+                        <ul id="list">
+                            <li id="facebook">
+                                <a href="https://www.facebook.com/profile.php?id=100021760126566" style="padding: 10px">
+                                    <i class="fab fa-facebook-square" style="color: #ec1839"></i>
+                                </a>
+                            </li>
+                            <li id="instagram">
+                                <a href="https://www.instagram.com/____r_a_s_i_____/ " style="padding: 10px">
+                                    <i class="fab fa-instagram-square" style="color: #ec1839"></i>
+                                </a>
+                            </li>
+                            <li id="twitter">
+                                <a href="https://twitter.com/RasinthaDilshan" style="padding: 10px">
+                                    <i class="fab fa-twitter-square" style="color: #ec1839"></i>
+                                </a>
+                            </li>
+                            <li id="linkedin">
+                                <a href="https://www.linkedin.com/in/rasintha-dilshan-21762a203" style="padding: 10px">
+                                    <i class="fab fa-linkedin" style="color: #ec1839"></i>
+                                </a>
+                            </li>
+                            <li id="github">
+                                <a href="https://github.com/RasinthaDilshanJayarathne" style="padding: 10px">
+                                    <i class="fab fa-github-square" style="color: #ec1839"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </section>
             <!--Main Content End-->
             <!--About Section Start-->
-            <section class="about section" id="about">
+            <section class="about active section" id="about">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -115,7 +146,7 @@
                                     <div class="row">
                                         <div class="buttons padd-15">
                                             <a class="btn" href="#">Download CV</a>
-                                            <a class="btn hire-me" href="#contact">Hire Me</a>
+                                            <a class="btn hire-me" href="#contact" data-section-index="1">Hire Me</a>
                                         </div>
                                     </div>
                                 </div>
@@ -277,7 +308,7 @@
             </section>
             <!--About Section End-->
             <!--Service Section Start-->
-            <section class="service section " id="service">
+            <section class="service active section" id="service">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -365,7 +396,7 @@
             </section>
             <!--Service Section End-->
             <!--Portfolio Section End-->
-            <section class="portfolio section " id="project">
+            <section class="portfolio active section" id="project">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -427,7 +458,7 @@
             </section>
             <!--Portfolio Section End-->
             <!--Contact Section Start-->
-            <section class="contact section" id="contactMe">
+            <section class="contact active section" id="contactMe">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -502,6 +533,8 @@
                 </div>
             </section>
             <!--Contact Section End-->
+
+
         </div>
     </div>
 
@@ -517,18 +550,20 @@
         </div>
         <h4>Theme Colors</h4>
         <div class="colors">
-           <span class="color-1" onclick="setActiveStyle('color-1')"></span>
-           <span class="color-2" onclick="setActiveStyle('color-2')"></span>
-           <span class="color-3" onclick="setActiveStyle('color-3')"></span>
-           <span class="color-4" onclick="setActiveStyle('color-4')"></span>
-           <span class="color-5" onclick="setActiveStyle('color-')"></span>
+            <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+            <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+            <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+            <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+            <span class="color-5" onclick="setActiveStyle('color-')"></span>
         </div>
     </div>
     <!--Style Switcher End-->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
+    <script referrerpolicy="no-referrer"
+            src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="assets/script/script.js"></script>
     <script src="assets/script/style-switcher.js"></script>
     </body>
+
 
 </htm>

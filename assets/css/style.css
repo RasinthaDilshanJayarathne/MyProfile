@@ -121,6 +121,33 @@ ul {
     transform: scale(1.05);
 }
 
+#media_links {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 24vw;
+}
+
+#list {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 0vw;
+}
+
+#list > li {
+    list-style: none;
+    width: 60px;
+    font-size: 40px;
+    transition: .6s;
+}
+
+#list > li:hover {
+    transition: all .6s ease;
+    transform: translate(0, -20px);
+    color: white;
+}
+
 .shadow-dark {
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
@@ -718,10 +745,16 @@ h3.my-profession {
     padding: 0 50px;
 }
 
+/*footer*/
+
 
 @media (max-width: 1199px) {
     .aside {
         left: -270px;
+    }
+
+    .aside .nav-toggler{
+        display: flex;
     }
 
     .main-content {
@@ -748,9 +781,9 @@ h3.my-profession {
         max-width: 100%;
     }
 
-    /*.home .home-img {
+    .home .home-img {
         display: none;
-    }*/
+    }
 }
 
 @media (max-width: 767px) {
