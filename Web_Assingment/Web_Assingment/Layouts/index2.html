@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case 1 (Using Absolute & Relative)</title>
+    <link href="Web_Assingment/assets/CSS/normalize.css" rel="stylesheet">
+    <meta content="width=device-width initial-scale=1" name="viewport">
+    <link href="Web_Assingment/assets/CSS/normalize.css" rel="stylesheet">
+    <style>
+        header{
+            position: relative;
+            /*x patta / y patta / blue size / kochchra pathirnwda kiyala / colr*/
+            box-shadow: -2px 6px 9px -4px #917a7a;
+            height: 80px;
+        }
+        body>main{
+            position: relative;
+        }
+
+        header>img{
+            width: 150px;
+            margin: 10px;
+        }
+
+        header>ul{
+            position: absolute;
+            right: 30px;
+            bottom: 0px;
+            top: 10px;
+            margin: auto;
+            height: 40px;
+            font-size: 20px;
+            font-family: "Berlin Sans FB Demi" , cursive;
+            list-style: none;
+        }
+
+        header>ul>li{
+            padding: 0 10px 0 10px;
+            display: inline-block;
+        }
+
+        header>ul>li:hover{
+            cursor: pointer;
+            color: red;
+        }
+
+        body>main>nav{
+            position: absolute;
+            width: 200px;
+            background: rebeccapurple;
+            top: 0;
+            bottom: 0;
+        }
+
+        body>main>nav>ul>li{
+            position: relative;
+            font-size: 20px;
+            list-style: none;
+            padding: 10px;
+            top: 20px;
+            left: 0;
+            color: white;
+            font-family: "Berlin Sans FB Demi" , cursive;
+        }
+
+        body>main>nav>ul>li:hover{
+            cursor: pointer;
+            color: red;
+            display: inline-block;
+        }
+
+        body>main>section>section{
+            height: 255px;
+            left: 0;
+            position: relative;
+        }
+
+        body>main>section>section>div:nth-child(1){
+            border: 2px solid black;
+            height: 250px;
+            width: 435px;
+            left: 205px;
+            top: 5px;
+            position: absolute;
+        }
+
+        body>main>section>section>div:nth-child(2){
+            border: 2px solid black;
+            height: 250px;
+            width: 435px;
+            left: 642px;
+            top: 5px;
+            position: absolute;
+        }
+
+        body>main>section>section>div:nth-child(3){
+            border: 2px solid black;
+            height: 250px;
+            width: 435px;
+            left: 1079px;
+            top: 5px;
+            position: absolute;
+        }
+
+        body>main>section>p{
+            position: relative;
+            left: 205px;
+            width: 84vw;
+            right: 0;
+        }
+
+        footer{
+            position: relative;
+            width: 98.8vw;
+            height: 40px;
+            background-color: #917a7a;
+            bottom: 16px;
+        }
+
+        footer>p{
+            position: relative;
+            top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            display: inline;
+            left: 700px;
+            font-family: "Berlin Sans FB Demi" , cursive;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <!--logo-->
+    <img alt="ijse" src="Web_Assingment/assets/imeges/ijse.png">
+    <ul>
+        <li>Home</li>
+        <li>Service</li>
+        <li>Contacts</li>
+        <li>About Us</li>
+    </ul>
+</header>
+
+<main>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>Service</li>
+            <li>Contacts</li>
+            <li>About Us</li>
+        </ul>
+    </nav>
+    <section>
+        <!--full images-->
+        <section>
+            <!--image 1-->
+            <div></div>
+            <!--image 2-->
+            <div></div>
+            <!--image 3-->
+            <div></div>
+        </section>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores atque consectetur consequuntur eius eos
+            eveniet ipsum iure magnam mollitia nemo, numquam perferendis quasi velit. Aliquam architecto eius expedita
+            fugit perspiciatis?</p>
+        <p>Aliquid aut autem commodi, consequatur cumque dicta, dolore eius error fugit illum laboriosam laborum maiores
+            modi neque nihil nobis odio officia quis ratione saepe sed sit, sunt tempora velit voluptatibus.</p>
+        <p>Consequuntur, debitis dicta eum odit optio quidem voluptates. Amet aperiam aut earum illo libero minima,
+            natus obcaecati officia optio possimus quam voluptatibus voluptatum. Autem dicta, eaque excepturi illo ipsa
+            totam?</p>
+        <p>At ipsa quae voluptatem? Deleniti dolore et fugit ipsa ipsam placeat quam vel! Ad deleniti, earum enim, fugit
+            in ipsum libero maiores neque, officia omnis pariatur perspiciatis quasi reiciendis sapiente!</p>
+        <p>A aliquam commodi consectetur debitis, delectus deleniti distinctio eaque error excepturi iure maiores neque
+            nesciunt, nostrum nulla odio quaerat reprehenderit saepe sit! Assumenda, hic iure maxime odit quae
+            repudiandae rerum!</p>
+        <p>Accusamus amet beatae cum deserunt dicta dignissimos doloremque enim, est fuga fugit illum inventore ipsa
+            libero magni nisi officia perspiciatis placeat qui quis quos, repellendus saepe, tempora unde voluptate
+            voluptatibus.</p>
+        <p>A culpa dicta, dolor enim eos explicabo illo ipsum laudantium obcaecati odio pariatur, suscipit velit vero.
+            Animi at dignissimos hic iste nemo nostrum quas ratione tempore, voluptatem voluptatum? Culpa, et!</p>
+        <p>Animi aut consectetur cum deserunt dolore fugit iusto labore modi necessitatibus obcaecati, omnis sequi
+            similique tempore! Aut reiciendis sapiente voluptates voluptatibus. Ab architecto dicta eligendi eos
+            inventore provident quisquam ullam.</p>
+    </section>
+</main>
+
+<footer>
+    <p>Developed By IJSE</p>
+</footer>
+</body>
+</html>
