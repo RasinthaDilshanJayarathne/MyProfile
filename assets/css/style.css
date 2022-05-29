@@ -556,6 +556,76 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
+/*gallery*/
+
+.nav_gallery .items {
+    margin-left: 148px;
+    display: flex;
+    max-width: 720px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.nav_gallery .items .item {
+    padding: 7px 35px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-black-900);
+    border: 2px solid var(--text-black-900);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav_gallery .items .active,
+.nav_gallery .items .item:hover {
+    color: white;
+    background: var(--text-black-900);
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.gallery .image{
+   padding: 7px;
+    width: calc(100% / 4);
+}
+
+.gallery .image.hide{
+    display: none;
+}
+
+.gallery .image.show{
+    animation: animateGallery 0.4s ease;
+}
+
+@keyframes animateGallery {
+    0%{
+        transform: scale(0.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.gallery .image span{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery .image img{
+    width: 100%;
+    vertical-align: middle;
+}
+
+.gallery .image:hover img{
+    transform: scale(1.1);
+}
+
 /*service*/
 .service .container {
     padding-bottom: 40px;
@@ -753,7 +823,7 @@ h3.my-profession {
         left: -270px;
     }
 
-    .aside .nav-toggler{
+    .aside .nav-toggler {
         display: flex;
     }
 
@@ -795,7 +865,7 @@ h3.my-profession {
     .about .about-content .experience,
     .about .about-content .education,
     .about .about-content .skills,
-    .about .about-content .personal-info{
+    .about .about-content .personal-info {
         flex: 0 0 100%;
         max-width: 100%;
     }

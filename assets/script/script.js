@@ -36,3 +36,27 @@ function showSection(element){
     const target = element.getAttribute("href").split("#")[1];
     document.querySelector("#" + target).classList.add("active")
 }
+
+const filterItem = document.querySelector(".items");
+const filterImg = document.querySelectorAll(".image");
+
+window.onload = ()=>{
+   filterItem.onclick = (selectedItem)=>{
+       if (selectedItem.target.classList.contains("item")){
+           filterItem.querySelector(".active").classList.remove("active");
+           let filterName = selectedItem.target.getAttribute("data-name");
+           filterImg.forEach((image)=>{
+               let filerImages = image.getAttribute("data-name");
+
+               if (filerImages == filterName || filterName == "all"){
+                   image.classList.remove("hide");
+                   image.classList.add("show");
+               }else {
+                   image.classList.add("hide");
+                   image.classList.remove("show");
+               }
+
+           })
+       }
+   }
+}

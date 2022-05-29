@@ -1,0 +1,1267 @@
+<!--
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>RDJ POS System</title>
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #posName {
+            color: #198754;
+            font-size: 25px;
+            margin-left: 10px;
+            margin-top: 5px;
+            font-family: cursive;
+        }
+    </style>
+</head>
+<body style="background:#adb5bd">
+&lt;!&ndash;Navigation Bar&ndash;&gt;
+<section>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark ">
+        <div class="container-fluid">
+            <img alt="" src="assets/image/logo1.png" width="50">
+            <h1 id="posName">RDJ POS System</h1>
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler" data-bs-target="#navbarSupportedContent"
+                    data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="cursor: pointer">
+                    <li class="nav-item" id="navHome" style="font-family: cursive; font-weight: bold;">
+                        <a aria-current="page" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item" id="navCustomer" style="font-family: cursive; font-weight: bold">
+                        <a class="nav-link">Customer</a>
+                    </li>
+                    <li class="nav-item" id="navItem" style="font-family: cursive; font-weight: bold">
+                        <a class="nav-link">Item</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+
+<section class="container-fluid" id="placeOrder">
+    &lt;!&ndash;title (Place Order)&ndash;&gt;
+    <section>
+        <img alt="Customer image" class="rounded mx-auto d-block mt-3" src="assets/image/placeOrder.png" width="120px">
+        <h1 class="text-center" id="header" style="font-family: fantasy">Placement Of An Order</h1>
+    </section>
+    &lt;!&ndash;details section&ndash;&gt;
+    <section class="row">
+        &lt;!&ndash;invoice details&ndash;&gt;
+        <div class="col-4 mt-3">
+            <div class="card border-success mb-3" style="max-width: 30rem; min-height: 22rem">
+                <div class="card-header text-white" style="font-weight: bold; background-color: #38ada9">Invoice
+                    Details
+                </div>
+                <div class="card-body">
+                    <form>
+                        <section class="row" style="width: 100%">
+                            <div class="mb-2 col-6">
+                                <label class="form-label" for="orderId" style="font-weight: bold; font-size: 12px">Order
+                                    ID</label>
+                                <input aria-describedby="idHelp" class="form-control" id="orderId" type="text">
+                                <div class="form-text" id="idHelp"></div>
+                            </div>
+                            <div class="mb-2 col-6">
+                                <label class="form-label" for="orderDate"
+                                       style="font-weight: bold; font-size: 12px">Date</label>
+                                <input aria-describedby="dateHelp" class="form-control" id="orderDate"
+                                       type="date">
+                                <div class="form-text" id="dateHelp"></div>
+                            </div>
+
+                            <div class="mb-2 col-6">
+                                <label class="form-label" style="font-weight: bold; font-size: 12px">Customer ID</label>
+                                <select class="form-select" id="custChombo">
+                                    &lt;!&ndash;<option id="custChomboBody"></option>&ndash;&gt;
+                                    <option selected>None</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-2 col-6">
+                                <label class="form-label" for="orderCustName"
+                                       style="font-weight: bold; font-size: 12px">Name</label>
+                                <input aria-describedby="itemNameHelp" class="form-control" disabled
+                                       id="orderCustName" type="text">
+                                <div class="form-text" id="itemNameHelp"></div>
+                            </div>
+                            <div class="mb-2 col-6">
+                                <label class="form-label" for="orderTelephoneNo"
+                                       style="font-weight: bold; font-size: 12px">Tel No</label>
+                                <input aria-describedby="telNoHelp" class="form-control" disabled
+                                       id="orderTelephoneNo" type="text">
+                                <div class="form-text" id="telNoHelp"></div>
+                            </div>
+                            <div class="mb-2 col-6">
+                                <label class="form-label" for="orderAddress"
+                                       style="font-weight: bold; font-size: 12px">Address</label>
+                                <input aria-describedby="addressHelp" class="form-control" disabled
+                                       id="orderAddress" type="text">
+                                <div class="form-text" id="addressHelp"></div>
+                            </div>
+                        </section>
+                    </form>
+                </div>
+            </div>
+        </div>
+        &lt;!&ndash;item selection&ndash;&gt;
+        <div class="col-4 mt-3">
+            <div class="card border-warning mb-3" style="max-width: 30rem; min-height: 22rem">
+                <div class="card-header text-white" style="font-weight: bold; background-color: #f6b93b">Item
+                    Selection
+                </div>
+                <div class="card-body">
+                    <form>
+                        <section class="row" style="width: 100%">
+                            <div class="mb-2 col-6">
+                                <label class="form-label" style="font-weight: bold; font-size: 12px">Item ID</label>
+                                <select class="form-select" id="itemChombo">
+                                    <option selected>None</option>
+                                </select>
+                            </div>
+                            <div class="mb-2 col-6">
+                                <label class="form-label" for="orderItemName"
+                                       style="font-weight: bold; font-size: 12px">Name</label>
+                                <input aria-describedby="nameHelp" class="form-control" disabled id="orderItemName"
+                                       type="text">
+                                <div class="form-text" id="nameHelp"></div>
+                            </div>
+                            <div class="mb-2 col-6">
+                                <label class="form-label" for="orderUnitPrice"
+                                       style="font-weight: bold; font-size: 12px">Unit
+                                    Price</label>
+                                <input aria-describedby="unitPriceHelp" class="form-control" disabled
+                                       id="orderUnitPrice" type="text">
+                                <div class="form-text" id="unitPriceHelp"></div>
+                            </div>
+                            <div class="mb-2 col-6">
+                                <label class="form-label" for="orderQtyOnHand"
+                                       style="font-weight: bold; font-size: 12px">QTY
+                                    On Hand</label>
+                                <input aria-describedby="qtyOnHandHelp" class="form-control" disabled
+                                       id="orderQtyOnHand" type="text">
+                                <div class="form-text" id="qtyOnHandHelp"></div>
+                            </div>
+                            <div class="mb-2 col-12">
+                                <label class="form-label" for="orderOrderQty"
+                                       style="font-weight: bold; font-size: 12px">Order
+                                    QTY</label>
+                                <input aria-describedby="orderQtyHelp" class="form-control" id="orderOrderQty"
+                                       type="text">
+                                <div class="form-text" id="orderQtyHelp"></div>
+                            </div>
+                        </section>
+                        <section class="row justify-content-center">
+                            <div class="mt-2 col-5">
+                                <button class="btn btn-primary  btn-sm w-100" id="addToCart" style="font-weight: bold"
+                                        type="button">+Add
+                                </button>
+                            </div>
+                        </section>
+                    </form>
+                </div>
+            </div>
+        </div>
+        &lt;!&ndash;final totals&ndash;&gt;
+        <div class="col-4 mt-3">
+            <div class="card border-dark mb-3" style="max-width: 30rem; min-height: 22rem">
+                <div class="card-body">
+                    <form>
+                        <section class="row" style="width: 100%">
+
+                            <div class="mb-2 col-6 mt-0">
+                                <label class="form-label" for="total"
+                                       style="font-weight: bold; font-size: 12px">Total </label>
+                                <input aria-describedby="total" class="form-control" id="total" style="color: #f53b57;font-weight: bold;"
+                                       type="text">
+                            </div>
+
+                            <div class="mb-2 col-6">
+                                <label class="form-label" for="orderOrderQty"
+                                       style="font-weight: bold; font-size: 12px">Discount </label>
+                                <input aria-describedby="orderQtyHelp" class="form-control" id="discountCmb"
+                                       style="color: black;font-weight: bold;" type="text">
+                            </div>
+
+                            <div class="mb-2 col-6 mt-0">
+                                <label class="form-label" for="orderOrderQty"
+                                       style="font-weight: bold; font-size: 12px">Sub Total </label>
+                                <input aria-describedby="orderQtyHelp" class="form-control" id="subToal" style="color: #0a58ca;font-weight: bold;"
+                                       type="text">
+                            </div>
+
+                            <div class="mb-2 col-6">
+                                <label class="form-label" for="cash"
+                                       style="font-weight: bold; font-size: 12px">Cash</label>
+                                <input aria-describedby="cashHelp" class="form-control" id="cash" type="text " style="font-weight: bold">
+                            </div>
+
+                            <div class="mb-2 col-6">
+                                <label class="form-label" for="cash"
+                                       style="font-weight: bold; font-size: 12px">Balance</label>
+                                <input aria-describedby="cashHelp" class="form-control" disabled id="balance"
+                                       style="color: #0fbcf9;font-weight: bold;" type="text">
+                            </div>
+
+                        </section>
+                        <section class="row ">
+                            <div class="mt-5 col-5 justify-content-lg-start col-md-4">
+                                <button class="btn btn-success  btn-sm w-100" id="btnPurchase" style="font-weight: bold"
+                                        type="button">Purchase
+                                </button>
+                            </div>
+
+                            <div class="mt-5 col-5 justify-content-lg-end col-md-4 ">
+                                <button class="btn btn-warning  btn-sm w-100" data-bs-target="#orderDetail"
+                                        data-bs-toggle="modal" id="btnOrderDetail" style="font-weight: bold"
+                                        type="button" type="button">Order Details
+                                </button>
+                            </div>
+
+                            <div class="mt-5 col-5 justify-content-lg-end col-md-4">
+                                <button class="btn btn-danger  btn-sm w-100"
+                                        data-bs-toggle="modal" id="clear" style="font-weight: bold"
+                                        type="button" type="button">Clear Details
+                                </button>
+                            </div>
+
+                        </section>
+
+                        <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="orderDetail"
+                             tabindex="-1">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header" style="background: #fd7e14">
+                                        <h5 class="modal-title" id="orderDetailLabel">Order Detail Form</h5>
+                                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
+                                                type="button"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <section class="row" style="width: 100%">
+                                            <table class="table table-dark table-striped mt-0 container-fluid">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">Order Id</th>
+                                                    <th scope="col">Order Date</th>
+                                                    <th scope="col">Customer Id</th>
+                                                    <th scope="col">Customer Name</th>
+                                                    <th scope="col">Item Code</th>
+                                                    <th scope="col">Item Name</th>
+                                                    <th scope="col">Quntity</th>
+                                                    <th scope="col">Total</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="orderDetailTable">
+
+                                                </tbody>
+                                            </table>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    &lt;!&ndash;table&ndash;&gt;
+    <section>
+        <table class="table table-primary table-striped mt-3 container-fluid">
+            <thead>
+            <tr>
+                <th scope="col">Item Code</th>
+                <th scope="col">Item Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Qty On Hand</th>
+                <th scope="col">Order Quantity</th>
+                <th scope="col">Total</th>
+                <th scope="col">Option</th>
+            </tr>
+            </thead>
+            <tbody id="orderTable">
+
+            </tbody>
+        </table>
+    </section>
+</section>
+
+<section class="container-fluid" id="item">
+    &lt;!&ndash;title (Item)&ndash;&gt;
+    <section>
+        <img alt="Customer image" class="rounded mx-auto d-block mt-2" src="assets/image/items.png" width="15%">
+        <h1 class="text-center" style="font-family: fantasy">Items Registration Form</h1>
+    </section>
+    &lt;!&ndash;Registration&ndash;&gt;
+    <section>
+        <form>
+            <section class="row mt-5" style="width: 100%">
+                <section class="row" style="width: 100%">
+                    <div class="mb-2 col-6">
+                        <label class="form-label" for="txtItemCode" style="font-weight: bold">ID</label>
+                        <input aria-describedby="idHelp1" class="form-control" id="txtItemCode" type="text">
+                        <div class="form-text" id="idHelp1"></div>
+                        <p><small class="text-danger p-1" id="ItemError"></small></p>
+                    </div>
+                    <div class="mb-2 col-6">
+                        <label class="form-label" for="txtItemName" style="font-weight: bold">Name</label>
+                        <input aria-describedby="nameHelp1" class="form-control" id="txtItemName" type="text">
+                        <div class="form-text" id="nameHelp1"></div>
+                        <p><small class="text-danger p-1" id="ItemError1"></small></p>
+                    </div>
+                    <div class="mb-2 col-6">
+                        <label class="form-label" for="txtItemPrice" style="font-weight: bold">Unit Price</label>
+                        <input aria-describedby="unitPriceHelp1" class="form-control" id="txtItemPrice" type="text">
+                        <div class="form-text" id="unitPriceHelp1"></div>
+                        <p><small class="text-danger p-1" id="ItemError2"></small></p>
+                    </div>
+                    <div class="mb-2 col-6">
+                        <label class="form-label" for="txtItemQTYOnHand" style="font-weight: bold">Quantity On Hand</label>
+                        <input aria-describedby="qtyOnHandHelp1" class="form-control" id="txtItemQTYOnHand" type="text">
+                        <div class="form-text" id="qtyOnHandHelp1"></div>
+                        <p><small class="text-danger p-1" id="ItemError3"></small></p>
+                    </div>
+                </section>
+                <section class="d-grid gap-2 d-md-flex container-fluid mt-4">
+                    <div class="mb-2 col-6">
+                        <label class="form-label" for="ItemPpoSearchBar"></label>
+                        <input class="form-control" id="ItemPpoSearchBar" placeholder="Search Customer" type="text">
+                    </div>
+                    <button class="btn btn-primary  btn-sm h-75 mt-3" id="btnItemSearch"
+                            style="font-size: 20px; font-weight: bold"
+                            type="button">Search
+                    </button>
+                    <button class="btn btn-warning  btn-sm h-75 mt-3" id="btnItemUpdate"
+                            style="font-size: 20px;font-weight: bold"
+                            type="button">Update
+                    </button>
+                    <button class="btn btn-success  btn-sm h-75 mt-3" data-bs-target="#exampleModal"
+                            data-bs-toggle="modal"
+                            id="btnAdd" style="font-size: 20px;font-weight: bold" type="button">+New Item
+                    </button>
+
+                    &lt;!&ndash; Modal &ndash;&gt;
+                    <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="exampleModal"
+                         tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header" style="background: #fd7e14">
+                                    <h5 class="modal-title" id="exampleModalLabel">Item Registration Form</h5>
+                                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
+                                            type="button"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <section class="row" style="width: 100%">
+                                        <div class="mb-2 col-6">
+                                            <label class="form-label" for="txtPopItemCode">Item Code</label>
+                                            <input aria-describedby="idHelp" class="form-control" id="txtPopItemCode"
+                                                   type="text">
+                                            <div class="form-text" id="codeHelp"></div>
+                                            <p><small class="text-danger p-1" id="popItemError"></small></p>
+                                        </div>
+                                        <div class="mb-2 col-6">
+                                            <label class="form-label" for="txtPopItemName">Name</label>
+                                            <input aria-describedby="nameHelp2" class="form-control" id="txtPopItemName"
+                                                   type="text">
+                                            <div class="form-text" id="nameHelp2"></div>
+                                            <p><small class="text-danger p-1" id="popItemError1"></small></p>
+                                        </div>
+                                        <div class="mb-2 col-6">
+                                            <label class="form-label" for="txtPopItemQuntity">Quntity</label>
+                                            <input aria-describedby="telNoHelp" class="form-control"
+                                                   id="txtPopItemQuntity" type="text">
+                                            <div class="form-text" id="quntityHelp"></div>
+                                            <p><small class="text-danger p-1" id="popItemError2"></small></p>
+                                        </div>
+                                        <div class="mb-2 col-6">
+                                            <label class="form-label" for="txtPopItemPrice">Price</label>
+                                            <input aria-describedby="addressHelp" class="form-control"
+                                                   id="txtPopItemPrice"
+                                                   type="text">
+                                            <div class="form-text" id="priceHelp"></div>
+                                            <p><small class="text-danger p-1" id="popItemError3"></small></p>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-success  btn-sm" id="popBtnAdd" type="button">+Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </form>
+    </section>
+
+    <section>
+        <table class="table table-dark table-striped mt-3">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Unit Price</th>
+                <th scope="col">Qty On Hand</th>
+                <th scope="col">Option</th>
+            </tr>
+            </thead>
+            <tbody id="itemTable">
+
+        </table>
+    </section>
+</section>
+
+<section class="container-fluid" id="customer">
+    &lt;!&ndash;title (Customer)&ndash;&gt;
+    <section>
+        <img alt="Customer image" class="rounded mx-auto d-block mt-2" src="assets/image/customer.png" width="15%">
+        <h1 class="text-center" style="font-family: fantasy">Customer Registration Form</h1>
+    </section>
+    &lt;!&ndash;Registration&ndash;&gt;
+    <section>
+        <form>
+            <section class="row mt-5" style="width: 100%">
+                <div class="mb-2 col-6">
+                    <label class="form-label" for="txtCustId" style="font-weight: bold">ID</label>
+                    <input aria-describedby="idHelp3" class="form-control" id="txtCustId" type="text">
+                    <div class="form-text" id="idHelp3"></div>
+                    <p><small class="text-danger p-1" id="lblError"></small></p>
+                </div>
+                <div class="mb-2 col-6">
+                    <label class="form-label" for="txtCustName" style="font-weight: bold">Name</label>
+                    <input aria-describedby="nameHelp3" class="form-control" id="txtCustName" type="text">
+                    <div class="form-text" id="nameHelp3"></div>
+                    <p><small class="text-danger p-1" id="lblError1"></small></p>
+
+                </div>
+                <div class="mb-2 col-6">
+                    <label class="form-label" for="txtCustAddress" style="font-weight: bold">Address</label>
+                    <input aria-describedby="addressHelp3" class="form-control" id="txtCustAddress" type="text">
+                    <div class="form-text" id="addressHelp3"></div>
+                    <p><small class="text-danger p-1" id="lblError2"></small></p>
+
+                </div>
+                <div class="mb-2 col-6">
+                    <label class="form-label" for="txtCustPhoneNo" style="font-weight: bold">Telephone No</label>
+                    <input aria-describedby="telNoHelp3" class="form-control" id="txtCustPhoneNo" type="text">
+                    <div class="form-text" id="telNoHelp3"></div>
+                    <p><small class="text-danger p-1" id="lblError3"></small></p>
+                </div>
+                <section class="d-grid gap-2 d-md-flex container-fluid mt-4">
+                    <div class="mb-2 col-6">
+                        <label class="form-label" for="searchBar3"></label>
+                        <input class="form-control" id="searchBar3" placeholder="Search Customer" type="text">
+                    </div>
+                    <button class="btn btn-primary  btn-sm h-75 mt-3" id="btnCustSearch"
+                            style="font-size: 20px; font-weight: bold"
+                            type="button">Search
+                    </button>
+                    <button class="btn btn-warning  btn-sm h-75 mt-3" id="btnCustUpdate"
+                            style="font-size: 20px;font-weight: bold"
+                            type="button">Update
+                    </button>
+                    <button class="btn btn-success  btn-sm h-75 mt-3" data-bs-target="#customerPopUp"
+                            data-bs-toggle="modal" style="font-size: 20px;font-weight: bold"
+                            type="button">+New Customer
+                    </button>
+
+                    &lt;!&ndash; Modal &ndash;&gt;
+                    <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="customerPopUp"
+                         tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header" style="background: #fd7e14">
+                                    <h5 class="modal-title" id="exampleModalLabel3">Customer Registration Form</h5>
+                                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
+                                            type="button"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <section class="row" style="width: 100%">
+                                        <div class="mb-2 col-6">
+                                            <label class="form-label" for="txtPopCustId">ID</label>
+                                            <input aria-describedby="idHelp" class="form-control" id="txtPopCustId"
+                                                   type="text">
+                                            <div class="form-text" id="id"></div>
+                                            <p><small class="text-danger p-1" id="error"></small></p>
+                                        </div>
+                                        <div class="mb-2 col-6">
+                                            <label class="form-label" for="txtPopCustName">Name</label>
+                                            <input aria-describedby="nameHelp" class="form-control" id="txtPopCustName"
+                                                   type="text">
+                                            <div class="form-text" id="name"></div>
+                                            <p><small class="text-danger p-1" id="error1"></small></p>
+                                        </div>
+                                        <div class="mb-2 col-6">
+                                            <label class="form-label" for="txtPopCustAddress">Address</label>
+                                            <input aria-describedby="addressHelp" class="form-control"
+                                                   id="txtPopCustAddress" type="text">
+                                            <div class="form-text" id="address"></div>
+                                            <p><small class="text-danger p-1" id="error2"></small></p>
+                                        </div>
+                                        <div class="mb-2 col-6">
+                                            <label class="form-label" for="txtPopCustPhone">Telephone No</label>
+                                            <input aria-describedby="telNoHelp" class="form-control"
+                                                   id="txtPopCustPhone" type="text">
+                                            <div class="form-text" id="telNo"></div>
+                                            <p><small class="text-danger p-1" id="error3"></small></p>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-success  btn-sm" id="popCustBtnAdd" type="button">+Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </form>
+    </section>
+
+    <section>
+        <table class="table table-dark table-striped mt-3">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Tel No</th>
+                <th scope="col">Option</th>
+            </tr>
+            </thead>
+            <tbody id="customerTable">
+
+            </tbody>
+        </table>
+    </section>
+</section>
+
+<script src="assets/jquery/jquery-3.6.0.min.js"></script>
+<script src="db/DB.js"></script>
+
+<script src="controller/DashboardController.js"></script>
+<script src="controller/OrderDetailController.js"></script>
+<script src="controller/ItemController.js"></script>
+<script src="controller/CustomerController.js"></script>
+<script src="controller/PlaceOrderController.js"></script>
+
+<script src="model/CustomerDTO.js"></script>
+<script src="model/ItemDTO.js"></script>
+<script src="model/OrderDTO.js"></script>
+<script src="model/OrderDetailDTO.js"></script>
+
+<script crossorigin="anonymous"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        src="assets/bootstrap/js/bootstrap.bundle.min.js">
+</script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>RDJ POS System</title>
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="bg-dark p-3" style="height: 100%">
+    <div class="row  pb-2 bg-light" style="height: 100%">
+        <div class="col-sm-8" style="height: 100%">
+            <div class="card mt-2" style=" width: 97vw; height: 10vh">
+
+                <div class="card-body">
+
+                    <div style="position: absolute;left: 87vw;top: 0vh;">
+                        <img src="assets/image/logo1.png" alt="" style="width: 58%">
+                    </div>
+
+
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button aria-controls="pills-home" aria-selected="true" class="nav-link active" data-bs-target="#pills-home"
+                                    data-bs-toggle="pill" id="home" role="tab" type="button">Home
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button aria-controls="pills-profile" aria-selected="false" class="nav-link"
+                                    data-bs-target="#pills-customer" data-bs-toggle="pill" id="customer"
+                                    role="tab" type="button">Customer
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button aria-controls="pills-contact" aria-selected="false" class="nav-link" data-bs-target="#pills-item"
+                                    data-bs-toggle="pill" id="item" role="tab" type="button">Item
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button aria-controls="pills-contact" aria-selected="false" class="nav-link"
+                                    data-bs-target="#pills-palceOrder" data-bs-toggle="pill" id="placeOrder"
+                                    role="tab" type="button">Place Order
+                            </button>
+                        </li>
+
+                    </ul>
+
+
+                </div>
+            </div>
+
+            <div class="tab-content" id="pills-tabContent">
+                <div aria-labelledby="home" class="tab-pane fade show active" id="pills-home" role="tabpanel">
+
+                    <div class="card mt-2 " style="width: 97vw; height: 85vh;">
+                        <div class="card-body">
+
+                            <!--photos card-->
+
+                            <div class="card mt-2 bg-gradient border-dark mx-5" style="height: 80vh">
+                                <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleCaptions">
+                                    <div class="carousel-indicators">
+                                        <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
+                                                data-bs-target="#carouselExampleCaptions" type="button"></button>
+                                        <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleCaptions"
+                                                type="button"></button>
+                                        <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleCaptions"
+                                                type="button"></button>
+                                        <button aria-label="Slide 3" data-bs-slide-to="3" data-bs-target="#carouselExampleCaptions"
+                                                type="button"></button>
+                                    </div>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img alt="..." class="d-block w-100" src="assets/image/image5.jpg" style="height: 80vh">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5>First slide label</h5>
+                                                <p>Some representative placeholder content for the first slide.</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img alt="..." class="d-block w-100" src="assets/image/image6.jpg" style="height: 80vh">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5>Second slide label</h5>
+                                                <p>Some representative placeholder content for the second slide.</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img alt="..." class="d-block w-100" src="assets/image/image7.jpg" style="height: 80vh">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5>Third slide label</h5>
+                                                <p>Some representative placeholder content for the third slide.</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img alt="..." class="d-block w-100" src="assets/image/image8.jpg" style="height: 80vh">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5>Fourth slide label</h5>
+                                                <p>Some representative placeholder content for the fourth slide.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleCaptions"
+                                            type="button">
+                                        <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleCaptions"
+                                            type="button">
+                                        <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!--small cards-->
+
+                            <!--<div class="row mx-5 mt-4">
+                                <div class="card  bg-gradient border-dark mx-5 col-3" style="height: 15vh;">
+                                    <div class="card-body">
+                                        <h5>ORDERS</h5>
+                                        <input aria-describedby="totalOrder" class="form-control" id="totalOrder" type="text" style="width: 6vw;height: 10vh;">
+                                    </div>
+                                </div>
+                                <div class="card bg-gradient border-dark mx-5 col-3" style="height: 15vh;">
+                                    <div class="card-body">
+                                        <h5>CUSTOMERS</h5>
+                                        <input aria-describedby="totalOrder" class="form-control" id="totalCustomer" type="text"  style="width: 6vw;height: 10vh;">
+                                    </div>
+                                </div>
+                                <div class="card  bg-gradient border-dark mx-5 col-3" style="height: 15vh;">
+                                    <div class="card-body">
+                                        <h5>ITEMS</h5>
+                                        <input aria-describedby="totalOrder" class="form-control m-lg-5 mb-5" id="totalItem" type="text"  style="width: 6vw;height: 10vh;">
+                                    </div>
+                                </div>
+                            </div>-->
+
+                        </div>
+                    </div>
+                </div>
+                <div aria-labelledby="customer" class="tab-pane fade" id="pills-customer" role="tabpanel">
+
+                    <div class="card mt-2" style="width: 97vw; height: 85vh;">
+                        <div class="card-body">
+
+                            <section class="container-fluid mt-3" id="customerContent">
+                                <section class="row mt-3 justify-content-around">
+                                    <div class="col-12 col-md-4">
+                                        <div class="shadow-sm pt-3 pb-5 px-3 py-3 mt-2">
+                                            <h1 class="h1 mb-3">Customer Manage</h1>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="searchBar3">Search Customer</label>
+                                                <input class="form-control" id="searchBar3" placeholder="Customer ID"
+                                                       type="text">
+                                            </div>
+                                            <button class="btn btn-success" data-bs-target="#customerPopUp"
+                                                    data-bs-toggle="modal" type="button" id="addNewCustomerBtn">+Add New
+                                            </button>
+                                            </button>
+                                            <button class="btn btn-warning" id="btnCustUpdate">Update</button>
+                                            <button class="btn btn-primary" id="btnCustSearch">Search</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-5">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="txtCustId">Customer ID</label>
+                                            <input class="form-control" id="txtCustId" placeholder="Customer ID"
+                                                   type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="txtCustName">Customer Name</label>
+                                            <input class="form-control" id="txtCustName" placeholder="Customer Name"
+                                                   type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="txtCustAddress">Customer Address</label>
+                                            <input class="form-control" id="txtCustAddress"
+                                                   placeholder="Customer Address" type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="txtCustPhoneNo">Customer Tp</label>
+                                            <input class="form-control" id="txtCustPhoneNo" placeholder="Customer Tp"
+                                                   type="text">
+                                        </div>
+                                    </div>
+                                </section>
+
+
+                                <section class="row mt-4">
+                                    <div class="col">
+                                        <table class="table table-hover">
+                                            <thead class="bg-dark text-white">
+                                            <tr>
+                                                <th>Customer ID</th>
+                                                <th>Customer Name</th>
+                                                <th>Customer Address</th>
+                                                <th>Customer TP.</th>
+                                                <th scope="col">Option</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="customerTable">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </section>
+
+
+                                <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade"
+                                     id="customerPopUp"
+                                     tabindex="-1">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header bg-dark">
+                                                <h5 class="modal-title" id="exampleModalLabel3" style="color: white">
+                                                    Customer Registration Form</h5>
+                                                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
+                                                        type="button"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <section class="row" style="width: 100%">
+                                                    <div class="mb-2 col-6">
+                                                        <label class="form-label" for="txtPopCustId">ID</label>
+                                                        <input aria-describedby="idHelp" class="form-control"
+                                                               id="txtPopCustId"
+                                                               type="text">
+                                                        <div class="form-text" id="id"></div>
+                                                        <p><small class="text-danger p-1" id="error"></small></p>
+                                                    </div>
+                                                    <div class="mb-2 col-6">
+                                                        <label class="form-label" for="txtPopCustName">Name</label>
+                                                        <input aria-describedby="nameHelp" class="form-control"
+                                                               id="txtPopCustName"
+                                                               type="text">
+                                                        <div class="form-text" id="name"></div>
+                                                        <p><small class="text-danger p-1" id="error1"></small></p>
+                                                    </div>
+                                                    <div class="mb-2 col-6">
+                                                        <label class="form-label"
+                                                               for="txtPopCustAddress">Address</label>
+                                                        <input aria-describedby="addressHelp" class="form-control"
+                                                               id="txtPopCustAddress" type="text">
+                                                        <div class="form-text" id="address"></div>
+                                                        <p><small class="text-danger p-1" id="error2"></small></p>
+                                                    </div>
+                                                    <div class="mb-2 col-6">
+                                                        <label class="form-label" for="txtPopCustPhone">Telephone
+                                                            No</label>
+                                                        <input aria-describedby="telNoHelp" class="form-control"
+                                                               id="txtPopCustPhone" type="text">
+                                                        <div class="form-text" id="telNo"></div>
+                                                        <p><small class="text-danger p-1" id="error3"></small></p>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn btn-success  btn-sm" id="popCustBtnAdd"
+                                                        type="button">+Add
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </section>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div aria-labelledby="item" class="tab-pane fade" id="pills-item" role="tabpanel">
+
+                    <div class="card mt-2" style=" width: 97vw; height: 85vh;">
+                        <div class="card-body">
+                            <section class="container-fluid mt-3" id="itemContent">
+                                <section class="row mt-3 justify-content-around">
+                                    <div class="col-12 col-md-4">
+                                        <div class="shadow-sm pt-3 pb-5 px-3 py-3 mt-2">
+                                            <h1 class="h1 mb-3">Item Manage</h1>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="ItemPpoSearchBar">Search Item</label>
+                                                <input class="form-control" id="ItemPpoSearchBar"
+                                                       placeholder="Item Code" type="text">
+                                            </div>
+                                            <button class="btn btn-success" data-bs-target="#exampleModal"
+                                                    data-bs-toggle="modal" type="button" id="addNewItem">+Add New
+                                            </button>
+                                            </button>
+                                            <button class="btn btn-warning" id="btnItemUpdate">Update</button>
+                                            <button class="btn btn-primary" id="btnItemSearch">Search</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-5">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="txtItemCode">Item Code</label>
+                                            <input class="form-control" id="txtItemCode" placeholder="Item Code"
+                                                   type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="txtItemName">Item Name</label>
+                                            <input class="form-control" id="txtItemName" placeholder="Item Name"
+                                                   type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="txtItemPrice">Unit Price</label>
+                                            <input class="form-control" id="txtItemPrice" placeholder="Unit Price"
+                                                   type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="txtItemQTYOnHand">Quantity On Hand</label>
+                                            <input class="form-control" id="txtItemQTYOnHand"
+                                                   placeholder="Quantity On Hand" type="text">
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="exampleModal"
+                                     tabindex="-1">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header bg-dark">
+                                                <h5 class="modal-title" id="exampleModalLabel" style="color: white">Item Registration
+                                                    Form</h5>
+                                                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
+                                                        type="button"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <section class="row" style="width: 100%">
+                                                    <div class="mb-2 col-6">
+                                                        <label class="form-label" for="txtPopItemCode">Item Code</label>
+                                                        <input aria-describedby="idHelp" class="form-control"
+                                                               id="txtPopItemCode"
+                                                               type="text">
+                                                        <div class="form-text" id="codeHelp"></div>
+                                                        <p><small class="text-danger p-1" id="popItemError"></small></p>
+                                                    </div>
+                                                    <div class="mb-2 col-6">
+                                                        <label class="form-label" for="txtPopItemName">Name</label>
+                                                        <input aria-describedby="nameHelp2" class="form-control"
+                                                               id="txtPopItemName"
+                                                               type="text">
+                                                        <div class="form-text" id="nameHelp2"></div>
+                                                        <p><small class="text-danger p-1" id="popItemError1"></small>
+                                                        </p>
+                                                    </div>
+                                                    <div class="mb-2 col-6">
+                                                        <label class="form-label"
+                                                               for="txtPopItemQuntity">Quntity</label>
+                                                        <input aria-describedby="telNoHelp" class="form-control"
+                                                               id="txtPopItemQuntity" type="text">
+                                                        <div class="form-text" id="quntityHelp"></div>
+                                                        <p><small class="text-danger p-1" id="popItemError2"></small>
+                                                        </p>
+                                                    </div>
+                                                    <div class="mb-2 col-6">
+                                                        <label class="form-label" for="txtPopItemPrice">Price</label>
+                                                        <input aria-describedby="addressHelp" class="form-control"
+                                                               id="txtPopItemPrice"
+                                                               type="text">
+                                                        <div class="form-text" id="priceHelp"></div>
+                                                        <p><small class="text-danger p-1" id="popItemError3"></small>
+                                                        </p>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn btn-success  btn-sm" id="popBtnAdd" type="button">
+                                                    +Add
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section class="row mt-4">
+                                <div class="col">
+                                    <table class="table table-hover">
+                                        <thead class="bg-dark text-white">
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Unit Price</th>
+                                            <th scope="col">Qty On Hand</th>
+                                            <th scope="col">Option</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="itemTable">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </section>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div aria-labelledby="placeOrder" class="tab-pane fade" id="pills-palceOrder" role="tabpanel">
+
+                    <div class="card mt-2" style=" width: 97vw; height: 85vh;">
+                        <div class="card-body">
+
+                            <section class="container-fluid" id="placeOrderForm">
+                                <!--title (Place Order)-->
+                                <section>
+                                    <!--
+                                                                        <h1 class="text-center" id="header" style="font-family: fantasy">Placement Of An Order</h1>
+                                    -->
+                                </section>
+                                <!--details section-->
+                                <section class="row">
+                                    <!--invoice details-->
+                                    <div class="col-4 mt-3">
+                                        <div class="card border-success mb-3" style="max-width: 30rem; min-height: 22rem">
+                                            <div class="card-header text-white" style="font-weight: bold; background-color: #38ada9">Invoice
+                                                Details
+                                            </div>
+                                            <div class="card-body">
+                                                <form>
+                                                    <section class="row" style="width: 100%">
+                                                        <div class="mb-2 col-6">
+                                                            <label class="form-label" for="orderId" style="font-weight: bold; font-size: 12px">Order
+                                                                ID</label>
+                                                            <input aria-describedby="idHelp" class="form-control" id="orderId" type="text">
+                                                            <div class="form-text" id="idHelp"></div>
+                                                        </div>
+                                                        <div class="mb-2 col-6">
+                                                            <label class="form-label" for="orderDate"
+                                                                   style="font-weight: bold; font-size: 12px">Date</label>
+                                                            <input aria-describedby="dateHelp" class="form-control" id="orderDate"
+                                                                   type="date">
+                                                            <div class="form-text" id="dateHelp"></div>
+
+                                                            <!-- <label class="form-label" for="orderDate"
+                                                                    style="font-weight: bold; font-size: 12px">Order Date</label>
+                                                             <input aria-describedby="itemNameHelp" class="form-control"
+                                                                    id="orderDate" type="text">
+                                                             <div class="form-text" ></div>-->
+
+                                                        </div>
+
+                                                        <div class="mb-2 col-6">
+                                                            <label class="form-label" style="font-weight: bold; font-size: 12px">Customer ID</label>
+                                                            <select class="form-select" id="custChombo">
+                                                                <!--<option id="custChomboBody"></option>-->
+                                                                <option selected>None</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="mb-2 col-6">
+                                                            <label class="form-label" for="orderCustName"
+                                                                   style="font-weight: bold; font-size: 12px">Name</label>
+                                                            <input aria-describedby="itemNameHelp" class="form-control" disabled
+                                                                   id="orderCustName" type="text">
+                                                            <div class="form-text" id="itemNameHelp"></div>
+                                                        </div>
+                                                        <div class="mb-2 col-6">
+                                                            <label class="form-label" for="orderTelephoneNo"
+                                                                   style="font-weight: bold; font-size: 12px">Tel No</label>
+                                                            <input aria-describedby="telNoHelp" class="form-control" disabled
+                                                                   id="orderTelephoneNo" type="text">
+                                                            <div class="form-text" id="telNoHelp"></div>
+                                                        </div>
+                                                        <div class="mb-2 col-6">
+                                                            <label class="form-label" for="orderAddress"
+                                                                   style="font-weight: bold; font-size: 12px">Address</label>
+                                                            <input aria-describedby="addressHelp" class="form-control" disabled
+                                                                   id="orderAddress" type="text">
+                                                            <div class="form-text" id="addressHelp"></div>
+                                                        </div>
+                                                    </section>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--item selection-->
+                                    <div class="col-4 mt-3">
+                                        <div class="card border-warning mb-3" style="max-width: 30rem; min-height: 22rem">
+                                            <div class="card-header text-white" style="font-weight: bold; background-color: #f6b93b">Item
+                                                Selection
+                                            </div>
+                                            <div class="card-body">
+                                                <form>
+                                                    <section class="row" style="width: 100%">
+                                                        <div class="mb-2 col-6">
+                                                            <label class="form-label" style="font-weight: bold; font-size: 12px">Item ID</label>
+                                                            <select class="form-select" id="itemChombo">
+                                                                <option selected>None</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="mb-2 col-6">
+                                                            <label class="form-label" for="orderItemName"
+                                                                   style="font-weight: bold; font-size: 12px">Name</label>
+                                                            <input aria-describedby="nameHelp" class="form-control" disabled id="orderItemName"
+                                                                   type="text">
+                                                            <div class="form-text" id="nameHelp"></div>
+                                                        </div>
+                                                        <div class="mb-2 col-6">
+                                                            <label class="form-label" for="orderUnitPrice"
+                                                                   style="font-weight: bold; font-size: 12px">Unit
+                                                                Price</label>
+                                                            <input aria-describedby="unitPriceHelp" class="form-control" disabled
+                                                                   id="orderUnitPrice" type="text">
+                                                            <div class="form-text" id="unitPriceHelp"></div>
+                                                        </div>
+                                                        <div class="mb-2 col-6">
+                                                            <label class="form-label" for="orderQtyOnHand"
+                                                                   style="font-weight: bold; font-size: 12px">QTY
+                                                                On Hand</label>
+                                                            <input aria-describedby="qtyOnHandHelp" class="form-control" disabled
+                                                                   id="orderQtyOnHand" type="text">
+                                                            <div class="form-text" id="qtyOnHandHelp"></div>
+                                                        </div>
+                                                        <div class="mb-2 col-12">
+                                                            <label class="form-label" for="orderOrderQty"
+                                                                   style="font-weight: bold; font-size: 12px">Order
+                                                                QTY</label>
+                                                            <input aria-describedby="orderQtyHelp" class="form-control" id="orderOrderQty"
+                                                                   type="text">
+                                                            <div class="form-text" id="orderQtyHelp"></div>
+                                                        </div>
+                                                    </section>
+                                                    <section class="row justify-content-center">
+                                                        <div class="mt-2 col-5">
+                                                            <button class="btn btn-primary  btn-sm w-100" id="addToCart" style="font-weight: bold"
+                                                                    type="button">+Add
+                                                            </button>
+                                                        </div>
+                                                    </section>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--final totals-->
+                                    <div class="col-4 mt-3">
+                                        <div class="card border-dark mb-3" style="max-width: 30rem; min-height: 22rem">
+                                            <div class="card-body">
+                                                <form>
+                                                    <section class="row" style="width: 100%">
+
+                                                        <div class="mb-2 col-6 mt-0">
+                                                            <label class="form-label" for="total"
+                                                                   style="font-weight: bold; font-size: 12px">Total </label>
+                                                            <input aria-describedby="total" class="form-control" id="total" style="color: #f53b57;font-weight: bold;"
+                                                                   type="text">
+                                                        </div>
+
+                                                        <div class="mb-2 col-6">
+                                                            <label class="form-label" for="orderOrderQty"
+                                                                   style="font-weight: bold; font-size: 12px">Discount </label>
+                                                            <input aria-describedby="orderQtyHelp" class="form-control" id="discountCmb"
+                                                                   style="color: black;font-weight: bold;" type="text">
+                                                        </div>
+
+                                                        <div class="mb-2 col-6 mt-0">
+                                                            <label class="form-label" for="orderOrderQty"
+                                                                   style="font-weight: bold; font-size: 12px">Sub Total </label>
+                                                            <input aria-describedby="orderQtyHelp" class="form-control" id="subToal" style="color: #0a58ca;font-weight: bold;"
+                                                                   type="text">
+                                                        </div>
+
+                                                        <div class="mb-2 col-6">
+                                                            <label class="form-label" for="cash"
+                                                                   style="font-weight: bold; font-size: 12px">Cash</label>
+                                                            <input aria-describedby="cashHelp" class="form-control" id="cash" type="text " style="font-weight: bold">
+                                                        </div>
+
+                                                        <div class="mb-2 col-6">
+                                                            <label class="form-label" for="cash"
+                                                                   style="font-weight: bold; font-size: 12px">Balance</label>
+                                                            <input aria-describedby="cashHelp" class="form-control" disabled id="balance"
+                                                                   style="color: #0fbcf9;font-weight: bold;" type="text">
+                                                        </div>
+
+                                                    </section>
+                                                    <section class="row ">
+                                                        <div class="mt-5 col-5 justify-content-lg-start col-md-4">
+                                                            <button class="btn btn-success  btn-sm w-100" id="btnPurchase" style="font-weight: bold"
+                                                                    type="button">Purchase
+                                                            </button>
+                                                        </div>
+
+                                                        <div class="mt-5 col-5 justify-content-lg-end col-md-4 ">
+                                                            <button class="btn btn-warning  btn-sm w-100" data-bs-target="#orderDetail"
+                                                                    data-bs-toggle="modal" id="btnOrderDetail" style="font-weight: bold"
+                                                                    type="button" type="button">Order Details
+                                                            </button>
+                                                        </div>
+
+                                                        <div class="mt-5 col-5 justify-content-lg-end col-md-4">
+                                                            <button class="btn btn-danger  btn-sm w-100"
+                                                                    data-bs-toggle="modal" id="clear" style="font-weight: bold"
+                                                                    type="button" type="button">Clear Details
+                                                            </button>
+                                                        </div>
+
+                                                    </section>
+
+                                                    <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="orderDetail"
+                                                         tabindex="-1">
+                                                        <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header" style="background: #fd7e14">
+                                                                    <h5 class="modal-title" id="orderDetailLabel">Order Detail Form</h5>
+                                                                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
+                                                                            type="button"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <section class="row" style="width: 100%">
+                                                                        <table class="table table-dark table-striped mt-0 container-fluid">
+                                                                            <thead>
+                                                                            <tr>
+                                                                                <th scope="col">Order Id</th>
+                                                                                <th scope="col">Order Date</th>
+                                                                                <th scope="col">Customer Id</th>
+                                                                                <th scope="col">Customer Name</th>
+                                                                                <th scope="col">Item Code</th>
+                                                                                <th scope="col">Item Name</th>
+                                                                                <th scope="col">Quntity</th>
+                                                                                <th scope="col">Total</th>
+                                                                            </tr>
+                                                                            </thead>
+                                                                            <tbody id="orderDetailTable">
+
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </section>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!--table-->
+                                <section>
+                                    <table class="table table-dark table-striped mt-3 container-fluid">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Item Code</th>
+                                            <th scope="col">Item Name</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Qty On Hand</th>
+                                            <th scope="col">Order Quantity</th>
+                                            <th scope="col">Total</th>
+                                            <th scope="col">Option</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="orderTable">
+
+                                        </tbody>
+                                    </table>
+                                </section>
+                            </section>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+
+    </div>
+</div>
+</div>
+
+<script src="assets/jquery/jquery-3.6.0.min.js"></script>
+<script src="db/DB.js"></script>
+
+<script src="controller/CustomerController.js"></script>
+<script src="controller/ItemController.js"></script>
+<script src="controller/OrderDetailController.js"></script>
+<script src="controller/PlaceOrderController.js"></script>
+<script src="controller/DashboardController.js"></script>
+
+<script src="model/CustomerDTO.js"></script>
+<script src="model/ItemDTO.js"></script>
+<script src="model/OrderDTO.js"></script>
+<script src="model/OrderDetailDTO.js"></script>
+
+<script crossorigin="anonymous"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        src="assets/bootstrap/js/bootstrap.bundle.min.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Animation</title>
+    <link href="Web_Assingment/assets/CSS/normalize.css" rel="stylesheet">
+    <meta content="width=device-width initial-scale=1" name="viewport">
+    <link href="../normalize.css" rel="stylesheet">
+    <link href="Web_Assingment/assets/css/fonts/css/all.css" rel="stylesheet">
+    <style>
+        section {
+            width: 180px;
+            height: 80px;
+            background: red;
+            border-radius: 30px;
+            animation-name: rotate;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            position: relative;
+        }
+
+        @keyframes rotate {
+            0% {
+                left: 0;
+                top: 0;
+                background: red;
+            }
+            25% {
+                left: 300px;
+                top: 0;
+                transform: rotate(90deg);
+                background: green;
+            }
+            50% {
+                left: 300px;
+                top: 300px;
+                transform: rotate(180deg);
+                background: orangered;
+            }
+            75% {
+                left: 0;
+                top: 300px;
+                transform: rotate(270deg);
+                background: purple;
+            }
+            100% {
+                left: 0;
+                top: 0;
+                transform: rotate(360deg);
+                background: red;
+            }
+        }
+    </style>
+</head>
+<body>
+<main>
+    <section>
+
+    </section>
+</main>
+</body>
+</html>
