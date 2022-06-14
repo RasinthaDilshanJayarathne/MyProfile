@@ -480,9 +480,6 @@ h3.my-profession {
     margin-bottom: 30px;
     font-weight: 700;
     color: var(--text-black-900);
-    /*
-    margin-left: -95px;
-    */
 }
 
 .about .about-content .timeline-box {
