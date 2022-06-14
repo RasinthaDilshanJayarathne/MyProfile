@@ -178,7 +178,7 @@ ul {
 
 .content .box{
     width: calc(20% - 30px);
-    border: 1px dashed var(--text-black-900);
+    border: 2px dashed var(--text-black-900);
     border-radius: 5px;
     padding: 10px;
     display: flex;
