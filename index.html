@@ -12,6 +12,9 @@
         <link href="assets/css/style.css" rel="stylesheet">
         <link href="assets/css/color-1.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
 
         <link class="alternate-style" disabled href="assets/css/color-1.css" rel="stylesheet" title="color-1">
         <link class="alternate-style" disabled href="assets/css/color-2.css" rel="stylesheet" title="color-2">
@@ -116,12 +119,12 @@
                         </div>
                         <div class="box">
                             <div class="icon"><i class="fa fa-users"></i></div>
-                            <div class="counter">00</div>
+                            <div class="counter">108</div>
                             <div class="text">Happy Client</div>
                         </div>
                         <div class="box">
                             <div class="icon"><i class="fa fa-history"></i></div>
-                            <div class="counter">00</div>
+                            <div class="counter">30</div>
                             <div class="text">Awards Received</div>
                         </div>
                     </div>
@@ -714,8 +717,16 @@
     </div>
     <!--Style Switcher End-->
 
-    <script referrerpolicy="no-referrer"
-            src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".counter").counterUp({
+                delay: 10,
+                time: 1200
+            });
+        })
+    </script>
+
+    <script referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="assets/script/script.js"></script>
     <script src="assets/script/style-switcher.js"></script>
     </body>

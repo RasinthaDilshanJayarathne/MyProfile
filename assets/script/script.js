@@ -18,17 +18,18 @@ const nav = document.querySelector(".nav"),
 for (let i = 0; i < totalNavList; i++) {
     const a = navList[i].querySelector("a");
 
-    a.addEventListener("click",function (){
+    a.addEventListener("click", function () {
 
         for (let j = 0; j < totalNavList; j++) {
 
-           navList[j].querySelector("a").classList.remove("active");
+            navList[j].querySelector("a").classList.remove("active");
         }
         this.classList.add("active")
         showSection(this);
     })
 }
-function showSection(element){
+
+function showSection(element) {
 
     for (let i = 0; i < totalSection; i++) {
         allSection[i].classList.remove("active");
@@ -40,23 +41,24 @@ function showSection(element){
 const filterItem = document.querySelector(".items");
 const filterImg = document.querySelectorAll(".image");
 
-window.onload = ()=>{
-   filterItem.onclick = (selectedItem)=>{
-       if (selectedItem.target.classList.contains("item")){
-           filterItem.querySelector(".active").classList.remove("active");
-           let filterName = selectedItem.target.getAttribute("data-name");
-           filterImg.forEach((image)=>{
-               let filerImages = image.getAttribute("data-name");
+window.onload = () => {
+    filterItem.onclick = (selectedItem) => {
+        if (selectedItem.target.classList.contains("item")) {
+            filterItem.querySelector(".active").classList.remove("active");
+            let filterName = selectedItem.target.getAttribute("data-name");
+            filterImg.forEach((image) => {
+                let filerImages = image.getAttribute("data-name");
 
-               if (filerImages == filterName || filterName == "all"){
-                   image.classList.remove("hide");
-                   image.classList.add("show");
-               }else {
-                   image.classList.add("hide");
-                   image.classList.remove("show");
-               }
+                if (filerImages == filterName || filterName == "all") {
+                    image.classList.remove("hide");
+                    image.classList.add("show");
+                } else {
+                    image.classList.add("hide");
+                    image.classList.remove("show");
+                }
 
-           })
-       }
-   }
+            })
+        }
+    }
 }
+
