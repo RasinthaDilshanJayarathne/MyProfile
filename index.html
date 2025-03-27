@@ -119,7 +119,7 @@
                         </div>
                         <div class="box">
                             <div class="icon"><i class="fa fa-gift"></i></div>
-                            <div class="counter">20</div>
+                            <div class="counter" id="repoCount">Loading...</div>
                             <div class="text">Completed Project</div>
                         </div>
                         <div class="box">
@@ -802,6 +802,47 @@
                 time: 1200
             });
         })
+    </script>
+
+    <script>
+        // Replace with your GitHub username
+        const username = 'RasinthaDilshanJayarathne';
+
+        // GitHub API URL with a proxy to handle CORS issues
+        const apiUrl = `https://api.allorigins.win/get?url=https://api.github.com/users/${username}/repos`;
+
+        async function getRepoCount() {
+            try {
+                console.log("Fetching data from API...");
+                const response = await fetch(apiUrl);
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+
+                console.log("API response data:", data);
+
+                // Parse the response data (which is returned as a string) into JSON
+                const repos = JSON.parse(data.contents);
+
+                console.log("Parsed repository data:", repos);
+
+                // Total repositories count is the length of the array
+                const repoCount = repos.length;
+                console.log("Total repository count:", repoCount);
+
+                document.getElementById('repoCount').textContent = repoCount;
+                // document.getElementById('repoCount').innerText = `Total Repositories: ${repoCount}`;
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                document.getElementById('repoCount').innerText = 'Error loading data';
+            }
+        }
+
+        // Call the function to fetch repository count
+        getRepoCount();
     </script>
 
     <script>
