@@ -132,7 +132,7 @@ ul {
 #media_links {
     position: absolute;
     display: flex;
-    bottom: 19vh;
+    bottom: 11vh;
     left: 35vw;
 }
 
@@ -372,6 +372,8 @@ h3.my-profession {
 }
 
 .home .home-img {
+    top: 70px;
+    left: 15px;
     flex: 0 0 35%;
     max-width: 35%;
     text-align: center;
@@ -385,8 +387,8 @@ h3.my-profession {
     width: 80px;
     border-bottom: 10px solid var(--skin-color);
     border-right: 10px solid var(--skin-color);
-    right: 20px;
-    bottom: -40px;
+    left: 300px;
+    bottom: 110px;
 }
 
 .home-img::before {
